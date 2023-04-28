@@ -14,19 +14,19 @@ RSpec.describe "specimens#update", type: :request do
           id: specimen.id.to_s,
           type: 'specimens',
           attributes: {
-            # ... your attrs here
+            label: 'bar'
           }
         }
       }
     end
 
     # Replace 'xit' with 'it' after adding attributes
-    xit 'updates the resource' do
+    it 'updates the resource' do
       expect(SpecimenResource).to receive(:find).and_call_original
       expect {
         make_request
         expect(response.status).to eq(200), response.body
-      }.to change { specimen.reload.attributes }
+      }.to change { specimen.reload.label }.to eq('bar')
     end
   end
 end

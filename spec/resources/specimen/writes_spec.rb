@@ -30,7 +30,9 @@ RSpec.describe SpecimenResource, type: :resource do
         data: {
           id: specimen.id.to_s,
           type: 'specimens',
-          attributes: { } # Todo!
+          attributes: { 
+            label: "bar"
+          }
         }
       }
     end
@@ -39,11 +41,10 @@ RSpec.describe SpecimenResource, type: :resource do
       SpecimenResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
+    it 'works' do
       expect {
         expect(instance.update_attributes).to eq(true)
-      }.to change { specimen.reload.updated_at }
-      # .and change { specimen.foo }.to('bar') <- example
+      }.to change { specimen.reload.label }.to('bar')
     end
   end
 
