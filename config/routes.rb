@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
+    resources :patient_identifiers
+    resources :patients
+    resources :registration_to_cps
     resources :collection_protocols
     resources :shipment_specimens, only: [:create, :destroy]
     resources :shipments

@@ -129,6 +129,313 @@
       }
     },
     {
+      "name": "PatientIdentifierResource",
+      "type": "patient_identifiers",
+      "graphql_entrypoint": "patientIdentifiers",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "identifier": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "identifier_type": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "identifier": {
+        },
+        "identifier_type": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "identifier": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "identifier_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "patient": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "PatientResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "PatientResource",
+      "type": "patients",
+      "graphql_entrypoint": "patients",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "firstname": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "surname": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "dob": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "dod": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "firstname": {
+        },
+        "surname": {
+        },
+        "dob": {
+        },
+        "dod": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "firstname": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "surname": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "dob": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "dod": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "RegistrationToCpResource",
+      "type": "registration_to_cps",
+      "graphql_entrypoint": "registrationToCps",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "registration_identifier": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "date": {
+        },
+        "registration_identifier": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "registration_identifier": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "collection_protocol": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "CollectionProtocolResource"
+        },
+        "patient": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "PatientResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ShipmentResource",
       "type": "shipments",
       "graphql_entrypoint": "shipments",
@@ -920,6 +1227,63 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
+        }
+      }
+    },
+    "/api/v1/patient_identifiers": {
+      "actions": {
+        "index": {
+          "resource": "PatientIdentifierResource"
+        },
+        "show": {
+          "resource": "PatientIdentifierResource"
+        },
+        "create": {
+          "resource": "PatientIdentifierResource"
+        },
+        "update": {
+          "resource": "PatientIdentifierResource"
+        },
+        "destroy": {
+          "resource": "PatientIdentifierResource"
+        }
+      }
+    },
+    "/api/v1/patients": {
+      "actions": {
+        "index": {
+          "resource": "PatientResource"
+        },
+        "show": {
+          "resource": "PatientResource"
+        },
+        "create": {
+          "resource": "PatientResource"
+        },
+        "update": {
+          "resource": "PatientResource"
+        },
+        "destroy": {
+          "resource": "PatientResource"
+        }
+      }
+    },
+    "/api/v1/registration_to_cps": {
+      "actions": {
+        "index": {
+          "resource": "RegistrationToCpResource"
+        },
+        "show": {
+          "resource": "RegistrationToCpResource"
+        },
+        "create": {
+          "resource": "RegistrationToCpResource"
+        },
+        "update": {
+          "resource": "RegistrationToCpResource"
+        },
+        "destroy": {
+          "resource": "RegistrationToCpResource"
         }
       }
     },
