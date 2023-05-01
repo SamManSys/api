@@ -175,6 +175,78 @@
       }
     },
     {
+      "name": "ShipmentSpecimenResource",
+      "type": "shipment_specimens",
+      "graphql_entrypoint": "shipmentSpecimens",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "specimen_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "shipment_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "specimen": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SpecimenResource"
+        },
+        "shipment": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "ShipmentResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "SpecimenCollectionResource",
       "type": "specimen_collections",
       "graphql_entrypoint": "specimenCollections",
@@ -720,6 +792,16 @@
         },
         "destroy": {
           "resource": "ShipmentResource"
+        }
+      }
+    },
+    "/api/v1/shipment_specimens": {
+      "actions": {
+        "create": {
+          "resource": "ShipmentSpecimenResource"
+        },
+        "destroy": {
+          "resource": "ShipmentSpecimenResource"
         }
       }
     },
