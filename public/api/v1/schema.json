@@ -1,6 +1,134 @@
 {
   "resources": [
     {
+      "name": "CollectionProtocolResource",
+      "type": "collection_protocols",
+      "graphql_entrypoint": "collectionProtocols",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "start_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "ethics_number": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "short_protocol_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "start_date": {
+        },
+        "ethics_number": {
+        },
+        "status": {
+        },
+        "short_protocol_name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "start_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "ethics_number": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "short_protocol_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ShipmentResource",
       "type": "shipments",
       "graphql_entrypoint": "shipments",
@@ -776,6 +904,25 @@
     }
   ],
   "endpoints": {
+    "/api/v1/collection_protocols": {
+      "actions": {
+        "index": {
+          "resource": "CollectionProtocolResource"
+        },
+        "show": {
+          "resource": "CollectionProtocolResource"
+        },
+        "create": {
+          "resource": "CollectionProtocolResource"
+        },
+        "update": {
+          "resource": "CollectionProtocolResource"
+        },
+        "destroy": {
+          "resource": "CollectionProtocolResource"
+        }
+      }
+    },
     "/api/v1/shipments": {
       "actions": {
         "index": {
