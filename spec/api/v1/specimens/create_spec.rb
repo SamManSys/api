@@ -6,6 +6,7 @@ RSpec.describe "specimens#create", type: :request do
   end
 
   describe 'basic create' do
+    let(:specimen_collection) { create(:specimen_collection) }
     let(:params) do
       attributes_for(:specimen)
     end
@@ -13,12 +14,20 @@ RSpec.describe "specimens#create", type: :request do
       {
         data: {
           type: 'specimens',
-          attributes: params
+          attributes: params,
+          relationships: {
+            specimen_collection: {
+              data: {
+                type: 'specimen_collections',
+                id: specimen_collection.id.to_s
+              }
+            }
+          }
         }
       }
     end
 
-    it 'works' do
+    it 'works' do      
       expect(SpecimenResource).to receive(:build).and_call_original
       expect {
         make_request

@@ -5,6 +5,8 @@ FactoryBot.define do
     availability { 'available' }
     status { :active }
 
+    association :specimen_collection
+    
     trait :closed do
       status { :closed }
     end

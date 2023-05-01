@@ -2,11 +2,23 @@ require 'rails_helper'
 
 RSpec.describe SpecimenResource, type: :resource do
   describe 'creating' do
+    let(:specimen_collection) { create(:specimen_collection) }
+    let(:params) do
+      attributes_for(:specimen)
+    end
     let(:payload) do
       {
         data: {
           type: 'specimens',
-          attributes: attributes_for(:specimen)
+          attributes: params,
+          relationships: {
+            specimen_collection: {
+              data: {
+                type: 'specimen_collections',
+                id: specimen_collection.id.to_s
+              }
+            }
+          }
         }
       }
     end

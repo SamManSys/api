@@ -29,7 +29,7 @@ RSpec.describe Specimen, :type => :model do
       specimen.label = "bar"
       expect(specimen).to_not be_valid
       expect(specimen.errors).not_to be_empty
-      expect(specimen.errors.where(:base).first.full_message).to eq("Specimen is closed.  Cannot be updated")      
+      expect(specimen.errors.where(:base).first.full_message).to eq("Specimen is closed. It cannot be updated")      
     end
   end
 end

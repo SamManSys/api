@@ -1,6 +1,254 @@
 {
   "resources": [
     {
+      "name": "SpecimenCollectionResource",
+      "type": "specimen_collections",
+      "graphql_entrypoint": "specimenCollections",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "study_point_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "collection_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "diagnosis": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "pathology_number": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "clinical_status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "comments": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "collection_status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "not_collected_reason": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "study_point_name": {
+        },
+        "collection_date": {
+        },
+        "status": {
+        },
+        "diagnosis": {
+        },
+        "pathology_number": {
+        },
+        "clinical_status": {
+        },
+        "comments": {
+        },
+        "collection_status": {
+        },
+        "not_collected_reason": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "study_point_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "collection_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "diagnosis": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "pathology_number": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "clinical_status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "comments": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "collection_status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "not_collected_reason": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "specimens": {
+          "type": "has_many",
+          "description": null,
+          "resource": "SpecimenResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "SpecimenResource",
       "type": "specimens",
       "graphql_entrypoint": "specimens",
@@ -254,9 +502,25 @@
             "match",
             "not_match"
           ]
+        },
+        "specimen_collection_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
         }
       },
       "relationships": {
+        "specimen_collection": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SpecimenCollectionResource"
+        }
       },
       "stats": {
         "total": [
@@ -266,6 +530,25 @@
     }
   ],
   "endpoints": {
+    "/api/v1/specimen_collections": {
+      "actions": {
+        "index": {
+          "resource": "SpecimenCollectionResource"
+        },
+        "show": {
+          "resource": "SpecimenCollectionResource"
+        },
+        "create": {
+          "resource": "SpecimenCollectionResource"
+        },
+        "update": {
+          "resource": "SpecimenCollectionResource"
+        },
+        "destroy": {
+          "resource": "SpecimenCollectionResource"
+        }
+      }
+    },
     "/api/v1/specimens": {
       "actions": {
         "index": {

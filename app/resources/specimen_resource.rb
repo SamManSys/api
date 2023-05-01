@@ -1,4 +1,6 @@
 class SpecimenResource < ApplicationResource
+  belongs_to :specimen_collection
+  
   attribute :label, :string
   attribute :barcode, :string
   attribute :specimen_class, :string
@@ -9,4 +11,6 @@ class SpecimenResource < ApplicationResource
   attribute :site, :string
   attribute :side, :string
   attribute :availability, :string
+
+  attribute :specimen_collection_id, :integer, only: [:filterable]
 end
