@@ -1208,6 +1208,390 @@
           "count"
         ]
       }
+    },
+    {
+      "name": "StorageContainerPositionResource",
+      "type": "storage_container_positions",
+      "graphql_entrypoint": "storageContainerPositions",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "position_x": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "position_y": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "position_x": {
+        },
+        "position_y": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "position_x": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "position_y": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "content": {
+          "type": "polymorphic_belongs_to",
+          "description": null,
+          "resources": [
+            "StorageContainerResource",
+            "SpecimenResource"
+          ],
+          "parent_resource": "StorageContainerPositionResource"
+        },
+        "storage_container": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "StorageContainerResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "StorageContainerResource",
+      "type": "storage_containers",
+      "graphql_entrypoint": "storageContainers",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_x": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_y": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "barcode": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        },
+        "size_x": {
+        },
+        "size_y": {
+        },
+        "barcode": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "size_x": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "size_y": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "barcode": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "storage_container_template": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "StorageContainerTemplateResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "StorageContainerTemplateResource",
+      "type": "storage_container_templates",
+      "graphql_entrypoint": "storageContainerTemplates",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label_x": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label_y": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_x": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_y": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        },
+        "label_x": {
+        },
+        "label_y": {
+        },
+        "size_x": {
+        },
+        "size_y": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "label_x": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "label_y": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "size_x": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "size_y": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
     }
   ],
   "endpoints": {
@@ -1351,6 +1735,63 @@
         },
         "destroy": {
           "resource": "SpecimenResource"
+        }
+      }
+    },
+    "/api/v1/storage_container_positions": {
+      "actions": {
+        "index": {
+          "resource": "StorageContainerPositionResource"
+        },
+        "show": {
+          "resource": "StorageContainerPositionResource"
+        },
+        "create": {
+          "resource": "StorageContainerPositionResource"
+        },
+        "update": {
+          "resource": "StorageContainerPositionResource"
+        },
+        "destroy": {
+          "resource": "StorageContainerPositionResource"
+        }
+      }
+    },
+    "/api/v1/storage_containers": {
+      "actions": {
+        "index": {
+          "resource": "StorageContainerResource"
+        },
+        "show": {
+          "resource": "StorageContainerResource"
+        },
+        "create": {
+          "resource": "StorageContainerResource"
+        },
+        "update": {
+          "resource": "StorageContainerResource"
+        },
+        "destroy": {
+          "resource": "StorageContainerResource"
+        }
+      }
+    },
+    "/api/v1/storage_container_templates": {
+      "actions": {
+        "index": {
+          "resource": "StorageContainerTemplateResource"
+        },
+        "show": {
+          "resource": "StorageContainerTemplateResource"
+        },
+        "create": {
+          "resource": "StorageContainerTemplateResource"
+        },
+        "update": {
+          "resource": "StorageContainerTemplateResource"
+        },
+        "destroy": {
+          "resource": "StorageContainerTemplateResource"
         }
       }
     }
