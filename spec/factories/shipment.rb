@@ -1,6 +1,8 @@
 FactoryBot.define do
-  factory :specimen_collection do |f|
-    sequence(:study_point_name) { |n| "SC Study point: #{n}" }
+  factory :shipment do
+    sequence(:name) { |n| "shipment_#{n}"}
+    date { Date.today }
+
     status { :active }
 
     trait :closed do
@@ -12,3 +14,4 @@ FactoryBot.define do
     end
   end
 end
+
