@@ -129,6 +129,165 @@
       }
     },
     {
+      "name": "CompletedConsentQuestionnaireResource",
+      "type": "completed_consent_questionnaires",
+      "graphql_entrypoint": "completedConsentQuestionnaires",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "signed_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "witness_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "scanned_uri": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "template_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "signed_date": {
+        },
+        "witness_name": {
+        },
+        "scanned_uri": {
+        },
+        "qc_performed": {
+        },
+        "template_name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "signed_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "witness_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "scanned_uri": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "template_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "registration_to_cp_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "registration_to_cp": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "RegistrationToCpResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ConsentQuestionnaireQuestionResource",
       "type": "consent_questionnaire_questions",
       "graphql_entrypoint": "consentQuestionnaireQuestions",
@@ -1795,6 +1954,25 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
+        }
+      }
+    },
+    "/api/v1/completed_consent_questionnaires": {
+      "actions": {
+        "index": {
+          "resource": "CompletedConsentQuestionnaireResource"
+        },
+        "show": {
+          "resource": "CompletedConsentQuestionnaireResource"
+        },
+        "create": {
+          "resource": "CompletedConsentQuestionnaireResource"
+        },
+        "update": {
+          "resource": "CompletedConsentQuestionnaireResource"
+        },
+        "destroy": {
+          "resource": "CompletedConsentQuestionnaireResource"
         }
       }
     },

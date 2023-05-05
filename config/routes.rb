@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
+    resources :completed_consent_questionnaires
     resources :consent_questionnaire_questions
     resources :consent_questionnaire_templates
     resources :storage_container_positions
