@@ -409,6 +409,101 @@
       }
     },
     {
+      "name": "ConsentQuestionnaireResponseResource",
+      "type": "consent_questionnaire_responses",
+      "graphql_entrypoint": "consentQuestionnaireResponses",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "answer": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "answer": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "answer": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "completed_consent_questionnaire_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "consent_questionnaire_question_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "completed_consent_questionnaire": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "CompletedConsentQuestionnaireResource"
+        },
+        "consent_questionnaire_question": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "ConsentQuestionnaireQuestionResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ConsentQuestionnaireTemplateResource",
       "type": "consent_questionnaire_templates",
       "graphql_entrypoint": "consentQuestionnaireTemplates",
@@ -1992,6 +2087,25 @@
         },
         "destroy": {
           "resource": "ConsentQuestionnaireQuestionResource"
+        }
+      }
+    },
+    "/api/v1/consent_questionnaire_responses": {
+      "actions": {
+        "index": {
+          "resource": "ConsentQuestionnaireResponseResource"
+        },
+        "show": {
+          "resource": "ConsentQuestionnaireResponseResource"
+        },
+        "create": {
+          "resource": "ConsentQuestionnaireResponseResource"
+        },
+        "update": {
+          "resource": "ConsentQuestionnaireResponseResource"
+        },
+        "destroy": {
+          "resource": "ConsentQuestionnaireResponseResource"
         }
       }
     },
