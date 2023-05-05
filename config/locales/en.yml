@@ -31,6 +31,8 @@
 
 en:
   activerecord:
+    models:
+      consent_questionnaire_question: Consent question
     errors:
       messages:
         closed: "%{model} is closed. It cannot be updated"

@@ -129,6 +129,127 @@
       }
     },
     {
+      "name": "ConsentQuestionnaireQuestionResource",
+      "type": "consent_questionnaire_questions",
+      "graphql_entrypoint": "consentQuestionnaireQuestions",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "question": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "position": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "question": {
+        },
+        "position": {
+        },
+        "status": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "position": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "consent_questionnaire_template_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "consent_questionnaire_template": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "ConsentQuestionnaireTemplateResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ConsentQuestionnaireTemplateResource",
       "type": "consent_questionnaire_templates",
       "graphql_entrypoint": "consentQuestionnaireTemplates",
@@ -1674,6 +1795,25 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
+        }
+      }
+    },
+    "/api/v1/consent_questionnaire_questions": {
+      "actions": {
+        "index": {
+          "resource": "ConsentQuestionnaireQuestionResource"
+        },
+        "show": {
+          "resource": "ConsentQuestionnaireQuestionResource"
+        },
+        "create": {
+          "resource": "ConsentQuestionnaireQuestionResource"
+        },
+        "update": {
+          "resource": "ConsentQuestionnaireQuestionResource"
+        },
+        "destroy": {
+          "resource": "ConsentQuestionnaireQuestionResource"
         }
       }
     },
