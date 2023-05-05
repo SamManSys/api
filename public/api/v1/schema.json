@@ -129,6 +129,69 @@
       }
     },
     {
+      "name": "ConsentQuestionnaireTemplateResource",
+      "type": "consent_questionnaire_templates",
+      "graphql_entrypoint": "consentQuestionnaireTemplates",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "PatientIdentifierResource",
       "type": "patient_identifiers",
       "graphql_entrypoint": "patientIdentifiers",
@@ -1611,6 +1674,25 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
+        }
+      }
+    },
+    "/api/v1/consent_questionnaire_templates": {
+      "actions": {
+        "index": {
+          "resource": "ConsentQuestionnaireTemplateResource"
+        },
+        "show": {
+          "resource": "ConsentQuestionnaireTemplateResource"
+        },
+        "create": {
+          "resource": "ConsentQuestionnaireTemplateResource"
+        },
+        "update": {
+          "resource": "ConsentQuestionnaireTemplateResource"
+        },
+        "destroy": {
+          "resource": "ConsentQuestionnaireTemplateResource"
         }
       }
     },
