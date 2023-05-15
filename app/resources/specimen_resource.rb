@@ -11,6 +11,7 @@ class SpecimenResource < ApplicationResource
   attribute :site, :string
   attribute :side, :string
   attribute :availability, :string
-
+  attribute :available_quantity, :float
+  
   attribute :specimen_collection_id, :integer, only: [:filterable]
 end
