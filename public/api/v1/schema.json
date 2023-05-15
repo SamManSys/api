@@ -1,6 +1,56 @@
 {
   "resources": [
     {
+      "name": "ActiveConsentQuestionnaireTemplateResource",
+      "type": "active_consent_questionnaire_templates",
+      "graphql_entrypoint": "activeConsentQuestionnaireTemplates",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "collection_protocol": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "CollectionProtocolResource"
+        },
+        "consent_questionnaire_template": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "ConsentQuestionnaireTemplateResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "CollectionProtocolResource",
       "type": "collection_protocols",
       "graphql_entrypoint": "collectionProtocols",
@@ -2033,6 +2083,25 @@
     }
   ],
   "endpoints": {
+    "/api/v1/active_consent_questionnaire_templates": {
+      "actions": {
+        "index": {
+          "resource": "ActiveConsentQuestionnaireTemplateResource"
+        },
+        "show": {
+          "resource": "ActiveConsentQuestionnaireTemplateResource"
+        },
+        "create": {
+          "resource": "ActiveConsentQuestionnaireTemplateResource"
+        },
+        "update": {
+          "resource": "ActiveConsentQuestionnaireTemplateResource"
+        },
+        "destroy": {
+          "resource": "ActiveConsentQuestionnaireTemplateResource"
+        }
+      }
+    },
     "/api/v1/collection_protocols": {
       "actions": {
         "index": {
