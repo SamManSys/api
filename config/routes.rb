@@ -12,10 +12,12 @@ Rails.application.routes.draw do
     resources :patients
     resources :registration_to_cps
     resources :collection_protocols
+    resources :samples
     resources :shipment_specimens, only: [:create, :destroy]
     resources :shipments
     resources :specimen_collections
     resources :specimens
+    
     mount VandalUi::Engine, at: '/vandal'
     # your routes go here
   end

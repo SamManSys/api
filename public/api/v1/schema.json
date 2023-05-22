@@ -924,6 +924,305 @@
       }
     },
     {
+      "name": "SampleResource",
+      "type": "sample",
+      "graphql_entrypoint": "samples",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "barcode": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "specimen_class": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "specimen_type": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "comments": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "born_on": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "site": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "side": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "availability": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "available_quantity": {
+          "type": "float",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "label": {
+        },
+        "barcode": {
+        },
+        "specimen_class": {
+        },
+        "specimen_type": {
+        },
+        "born_on": {
+        },
+        "status": {
+        },
+        "site": {
+        },
+        "side": {
+        },
+        "availability": {
+        },
+        "available_quantity": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "barcode": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "specimen_class": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "specimen_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "comments": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "born_on": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "site": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "side": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "available_quantity": {
+          "type": "float",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "specimen_collection_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "specimen_collection": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SpecimenCollectionResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "ShipmentResource",
       "type": "shipments",
       "graphql_entrypoint": "shipments",
@@ -1488,6 +1787,12 @@
           "readable": true,
           "writable": true,
           "description": null
+        },
+        "available_quantity": {
+          "type": "float",
+          "readable": true,
+          "writable": true,
+          "description": null
         }
       },
       "extra_attributes": {
@@ -1512,6 +1817,8 @@
         "side": {
         },
         "availability": {
+        },
+        "available_quantity": {
         }
       },
       "filters": {
@@ -1670,6 +1977,17 @@
             "not_suffix",
             "match",
             "not_match"
+          ]
+        },
+        "available_quantity": {
+          "type": "float",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
           ]
         },
         "specimen_collection_id": {
@@ -2251,6 +2569,25 @@
         },
         "destroy": {
           "resource": "RegistrationToCpResource"
+        }
+      }
+    },
+    "/api/v1/samples": {
+      "actions": {
+        "index": {
+          "resource": "SampleResource"
+        },
+        "show": {
+          "resource": "SampleResource"
+        },
+        "create": {
+          "resource": "SampleResource"
+        },
+        "update": {
+          "resource": "SampleResource"
+        },
+        "destroy": {
+          "resource": "SampleResource"
         }
       }
     },
