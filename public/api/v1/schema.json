@@ -926,7 +926,7 @@
     {
       "name": "SampleResource",
       "type": "samples",
-      "graphql_entrypoint": "samples",
+      "graphql_entrypoint": "specimens",
       "description": null,
       "attributes": {
         "id": {
