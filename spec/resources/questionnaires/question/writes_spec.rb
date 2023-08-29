@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
+RSpec.describe Questionnaires::QuestionResource, type: :resource do
   describe 'creating' do
     let(:consent_questionnaire_template) do
       create(:consent_questionnaire_template)
@@ -8,12 +8,12 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
     let(:payload) do
       {
         data: {
-          type: 'consent_questionnaire_questions',
+          type: 'questions',
           attributes: attributes_for(:consent_questionnaire_question),
           relationships: {
-            consent_questionnaire_template: {
+            template: {
               data: {
-                type: 'consent_questionnaire_templates',
+                type: 'templates',
                 id: consent_questionnaire_template.id.to_s
               }
             }
@@ -23,7 +23,7 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
     end
 
     let(:instance) do
-      ConsentQuestionnaireQuestionResource.build(payload)
+      Questionnaires::QuestionResource.build(payload)
     end
 
     it 'works' do
@@ -40,7 +40,7 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
       {
         data: {
           id: consent_questionnaire_question.id.to_s,
-          type: 'consent_questionnaire_questions',
+          type: 'questions',
           attributes: { 
             question: 'Meh'
           } 
@@ -49,7 +49,7 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
     end
 
     let(:instance) do
-      ConsentQuestionnaireQuestionResource.find(payload)
+      Questionnaires::QuestionResource.find(payload)
     end
 
     it 'works (add some attributes and enable this spec)' do
@@ -63,7 +63,7 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
     let!(:consent_questionnaire_question) { create(:consent_questionnaire_question) }
 
     let(:instance) do
-      ConsentQuestionnaireQuestionResource.find(id: consent_questionnaire_question.id)
+      Questionnaires::QuestionResource.find(id: consent_questionnaire_question.id)
     end
 
     it 'works' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
+RSpec.describe Questionnaires::FormResource, type: :resource do
   describe 'creating' do
     let(:registration_to_cp) {
       create(:registration_to_cp)
@@ -8,7 +8,7 @@ RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
     let(:payload) do
       {
         data: {
-          type: 'completed_consent_questionnaires',
+          type: 'forms',
           attributes: attributes_for(:completed_consent_questionnaire),
           relationships: {
             registration_to_cp: {
@@ -23,7 +23,7 @@ RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
     end
 
     let(:instance) do
-      CompletedConsentQuestionnaireResource.build(payload)
+      Questionnaires::FormResource.build(payload)
     end
 
     it 'works' do
@@ -42,7 +42,7 @@ RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
       {
         data: {
           id: completed_consent_questionnaire.id.to_s,
-          type: 'completed_consent_questionnaires',
+          type: 'forms',
           attributes: { 
             witness_name: full_name
           }
@@ -51,7 +51,7 @@ RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
     end
 
     let(:instance) do
-      CompletedConsentQuestionnaireResource.find(payload)
+      Questionnaires::FormResource.find(payload)
     end
 
     it 'works (add some attributes and enable this spec)' do
@@ -65,7 +65,7 @@ RSpec.describe CompletedConsentQuestionnaireResource, type: :resource do
     let!(:completed_consent_questionnaire) { create(:completed_consent_questionnaire) }
 
     let(:instance) do
-      CompletedConsentQuestionnaireResource.find(id: completed_consent_questionnaire.id)
+      Questionnaires::FormResource.find(id: completed_consent_questionnaire.id)
     end
 
     it 'works' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
+RSpec.describe Questionnaires::ResponseResource, type: :resource do
   describe 'creating' do
     let(:consent_questionnaire_question) do
       create(:consent_questionnaire_question)
@@ -15,18 +15,18 @@ RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
     let(:payload) do
       {
         data: {
-          type: 'consent_questionnaire_responses',
+          type: 'responses',
           attributes: params,
           relationships: {
-            consent_questionnaire_question: {
+            question: {
               data: {
-                type: 'consent_questionnaire_questions',
+                type: 'questions',
                 id: consent_questionnaire_question.id.to_s
               }               
             },
-            completed_consent_questionnaire: {
+            form: {
               data: {
-                type: 'completed_consent_questionnaires',
+                type: 'forms',
                 id: completed_consent_questionnaire.id.to_s  
               }
             }
@@ -36,7 +36,7 @@ RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
     end
 
     let(:instance) do
-      ConsentQuestionnaireResponseResource.build(payload)
+      Questionnaires::ResponseResource.build(payload)
     end
 
     it 'works' do
@@ -53,7 +53,7 @@ RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
       {
         data: {
           id: consent_questionnaire_response.id.to_s,
-          type: 'consent_questionnaire_responses',
+          type: 'responses',
           attributes: { 
             answer: 'new answer'
           }
@@ -62,10 +62,10 @@ RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
     end
 
     let(:instance) do
-      ConsentQuestionnaireResponseResource.find(payload)
+      Questionnaires::ResponseResource.find(payload)
     end
 
-    it 'works (add some attributes and enable this spec)' do
+    it 'works' do
       expect {
         expect(instance.update_attributes).to eq(true)
       }.to change { consent_questionnaire_response.reload.answer }.to('new answer')
@@ -76,7 +76,7 @@ RSpec.describe ConsentQuestionnaireResponseResource, type: :resource do
     let!(:consent_questionnaire_response) { create(:consent_questionnaire_response) }
 
     let(:instance) do
-      ConsentQuestionnaireResponseResource.find(id: consent_questionnaire_response.id)
+      Questionnaires::ResponseResource.find(id: consent_questionnaire_response.id)
     end
 
     it 'works' do

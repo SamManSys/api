@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe ConsentQuestionnaireTemplateResource, type: :resource do
+RSpec.describe Questionnaires::TemplateResource, type: :resource do
   describe 'creating' do
     let(:payload) do
       {
         data: {
-          type: 'consent_questionnaire_templates',
+          type: 'templates',
           attributes: attributes_for(:consent_questionnaire_template)
         }
       }
     end
 
     let(:instance) do
-      ConsentQuestionnaireTemplateResource.build(payload)
+      Questionnaires::TemplateResource.build(payload)
     end
 
     it 'works' do
@@ -29,7 +29,7 @@ RSpec.describe ConsentQuestionnaireTemplateResource, type: :resource do
       {
         data: {
           id: consent_questionnaire_template.id.to_s,
-          type: 'consent_questionnaire_templates',
+          type: 'templates',
           attributes: { 
             name: 'Meh'
           } 
@@ -38,7 +38,7 @@ RSpec.describe ConsentQuestionnaireTemplateResource, type: :resource do
     end
 
     let(:instance) do
-      ConsentQuestionnaireTemplateResource.find(payload)
+      Questionnaires::TemplateResource.find(payload)
     end
 
     it 'works (add some attributes and enable this spec)' do
@@ -52,7 +52,7 @@ RSpec.describe ConsentQuestionnaireTemplateResource, type: :resource do
     let!(:consent_questionnaire_template) { create(:consent_questionnaire_template) }
 
     let(:instance) do
-      ConsentQuestionnaireTemplateResource.find(id: consent_questionnaire_template.id)
+      Questionnaires::TemplateResource.find(id: consent_questionnaire_template.id)
     end
 
     it 'works' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
+RSpec.describe Questionnaires::QuestionResource, type: :resource do
   describe 'serialization' do
     let!(:consent_questionnaire_question) { create(:consent_questionnaire_question) }
 
@@ -8,7 +8,7 @@ RSpec.describe ConsentQuestionnaireQuestionResource, type: :resource do
       render
       data = jsonapi_data[0]
       expect(data.id).to eq(consent_questionnaire_question.id)
-      expect(data.jsonapi_type).to eq('consent_questionnaire_questions')
+      expect(data.jsonapi_type).to eq('questions')
     end
   end
 
