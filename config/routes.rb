@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     scope path: 'questionnaires', module: 'questionnaires' do
       resources :templates
       resources :questions
+      resources :responses
+      resources :forms
     end
     mount VandalUi::Engine, at: '/vandal'
   end

@@ -6,6 +6,7 @@ class ConsentQuestionnaireQuestion < ApplicationRecord
   validates_presence_of :question
   validates_with ClosedValidator
 
+  # TODO investigate if the alias can be removed
   # Alias used as a bridge between API and database
   alias_attribute :template, :consent_questionnaire_template_id
 end

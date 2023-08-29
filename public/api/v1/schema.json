@@ -129,165 +129,6 @@
       }
     },
     {
-      "name": "CompletedConsentQuestionnaireResource",
-      "type": "completed_consent_questionnaires",
-      "graphql_entrypoint": "completedConsentQuestionnaires",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "signed_date": {
-          "type": "datetime",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "witness_name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "scanned_uri": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "qc_performed": {
-          "type": "boolean",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "template_name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "signed_date": {
-        },
-        "witness_name": {
-        },
-        "scanned_uri": {
-        },
-        "qc_performed": {
-        },
-        "template_name": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "signed_date": {
-          "type": "datetime",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "witness_name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "scanned_uri": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "qc_performed": {
-          "type": "boolean",
-          "operators": [
-            "eq"
-          ],
-          "single": true
-        },
-        "template_name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "registration_to_cp_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "registration_to_cp": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "RegistrationToCpResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
       "name": "PatientIdentifierResource",
       "type": "patient_identifiers",
       "graphql_entrypoint": "patientIdentifiers",
@@ -503,6 +344,170 @@
       }
     },
     {
+      "name": "Questionnaires::FormResource",
+      "type": "form",
+      "graphql_entrypoint": "forms",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "signed_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "witness_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "scanned_uri": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "template_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "signed_date": {
+        },
+        "witness_name": {
+        },
+        "scanned_uri": {
+        },
+        "qc_performed": {
+        },
+        "template_name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "signed_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "witness_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "scanned_uri": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "template_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "registration_to_cp_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "registration_to_cp": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "RegistrationToCpResource"
+        },
+        "responses": {
+          "type": "has_many",
+          "description": null,
+          "resource": "Questionnaires::ResponseResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "Questionnaires::QuestionResource",
       "type": "questions",
       "graphql_entrypoint": "questions",
@@ -672,6 +677,11 @@
           "type": "belongs_to",
           "description": null,
           "resource": "Questionnaires::QuestionResource"
+        },
+        "form": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "Questionnaires::FormResource"
         }
       },
       "stats": {
@@ -2370,6 +2380,25 @@
         }
       }
     },
+    "/api/v1/questionnaires/forms": {
+      "actions": {
+        "index": {
+          "resource": "Questionnaires::FormResource"
+        },
+        "show": {
+          "resource": "Questionnaires::FormResource"
+        },
+        "create": {
+          "resource": "Questionnaires::FormResource"
+        },
+        "update": {
+          "resource": "Questionnaires::FormResource"
+        },
+        "destroy": {
+          "resource": "Questionnaires::FormResource"
+        }
+      }
+    },
     "/api/v1/questionnaires/questions": {
       "actions": {
         "index": {
@@ -2386,6 +2415,25 @@
         },
         "destroy": {
           "resource": "Questionnaires::QuestionResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires/responses": {
+      "actions": {
+        "index": {
+          "resource": "Questionnaires::ResponseResource"
+        },
+        "show": {
+          "resource": "Questionnaires::ResponseResource"
+        },
+        "create": {
+          "resource": "Questionnaires::ResponseResource"
+        },
+        "update": {
+          "resource": "Questionnaires::ResponseResource"
+        },
+        "destroy": {
+          "resource": "Questionnaires::ResponseResource"
         }
       }
     },
