@@ -1,11 +1,11 @@
 module Questionnaires
   class FormResource < ApplicationResource
     self.model = CompletedConsentQuestionnaire
-    self.type = :form
+    self.type = :forms
 
     belongs_to :registration_to_cp
     has_many :responses
-    
+
     attribute :signed_date, :datetime
     attribute :witness_name, :string
     attribute :scanned_uri, :string

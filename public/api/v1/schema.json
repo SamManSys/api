@@ -345,7 +345,7 @@
     },
     {
       "name": "Questionnaires::FormResource",
-      "type": "form",
+      "type": "forms",
       "graphql_entrypoint": "forms",
       "description": null,
       "attributes": {
