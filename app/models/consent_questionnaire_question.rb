@@ -5,4 +5,7 @@ class ConsentQuestionnaireQuestion < ApplicationRecord
   validates_presence_of :position
   validates_presence_of :question
   validates_with ClosedValidator
+
+  # Alias used as a bridge between API and database
+  alias_attribute :template, :consent_questionnaire_template_id
 end
