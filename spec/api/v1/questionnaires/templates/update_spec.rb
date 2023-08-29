@@ -13,7 +13,7 @@ RSpec.describe "questionnaires", type: :request do
         {
           data: {
             id: consent_questionnaire_template.id.to_s,
-            type: 'consent_questionnaire_templates',
+            type: 'templates',
             attributes: {
               name: 'Meh'
             }

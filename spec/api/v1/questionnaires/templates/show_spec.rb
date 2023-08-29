@@ -15,7 +15,7 @@ RSpec.describe "questionnaires", type: :request do
         expect(Questionnaires::TemplateResource).to receive(:find).and_call_original
         make_request
         expect(response.status).to eq(200)
-        expect(d.jsonapi_type).to eq('consent_questionnaire_templates')
+        expect(d.jsonapi_type).to eq('templates')
         expect(d.id).to eq(consent_questionnaire_template.id)
       end
     end
