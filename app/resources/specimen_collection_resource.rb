@@ -1,5 +1,5 @@
 class SpecimenCollectionResource < ApplicationResource
-  has_many :specimens
+  has_many :samples
 
   attribute :study_point_name, :string
   attribute :collection_date, :datetime

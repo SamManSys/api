@@ -9,7 +9,7 @@ RSpec.describe Containers::StoreResource, type: :resource do
       {
         data: {
           type: 'stores',
-          attributes: attributes_for(:storage_container),
+          attributes: attributes_for(:store),
           relationships: {
             template: {
               data: {
@@ -29,17 +29,17 @@ RSpec.describe Containers::StoreResource, type: :resource do
     it 'works' do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { StorageContainer.count }.by(1)
+      }.to change { Store.count }.by(1)
     end
   end
 
   describe 'updating' do
-    let!(:storage_container) { create(:storage_container) }
+    let!(:store) { create(:store) }
 
     let(:payload) do
       {
         data: {
-          id: storage_container.id.to_s,
+          id: store.id.to_s,
           type: 'stores',
           attributes: { } # Todo!
         }
@@ -53,22 +53,22 @@ RSpec.describe Containers::StoreResource, type: :resource do
     xit 'works (add some attributes and enable this spec)' do
       expect {
         expect(instance.update_attributes).to eq(true)
-      }.to change { storage_container.reload.updated_at }
-      # .and change { storage_container.foo }.to('bar') <- example
+      }.to change { store.reload.updated_at }
+      # .and change { store.foo }.to('bar') <- example
     end
   end
 
   describe 'destroying' do
-    let!(:storage_container) { create(:storage_container) }
+    let!(:store) { create(:store) }
 
     let(:instance) do
-      Containers::StoreResource.find(id: storage_container.id)
+      Containers::StoreResource.find(id: store.id)
     end
 
     it 'works' do
       expect {
         expect(instance.destroy).to eq(true)
-      }.to change { StorageContainer.count }.by(-1)
+      }.to change { Store.count }.by(-1)
     end
   end
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :storage_container do
+  factory :store do
     sequence(:name) { |n| "Container: #{n}"}
 
     size_x { 1 }

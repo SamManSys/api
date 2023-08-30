@@ -1,4 +1,4 @@
-class StorageContainer < ApplicationRecord
+class Store < ApplicationRecord
   belongs_to  :storage_container_template
 
   validates_presence_of :name

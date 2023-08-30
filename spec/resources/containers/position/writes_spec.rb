@@ -2,20 +2,20 @@ require 'rails_helper'
 
 RSpec.describe "Containers", type: :resource do
   describe Containers::PositionResource, type: :resource do
-    describe 'creating' do
-      let(:storage_container) {
-        create(:storage_container)
-      }
+    describe 'add specimen via update' do
+      let!(:storage_container_position) { create(:storage_container_position) }
+      let!(:specimen) { create(:specimen) }      
       let(:payload) do
         {
           data: {
+            id: storage_container_position.id.to_s,
             type: 'positions',
-            attributes: attributes_for(:storage_container_position),
+            attributes: { },
             relationships: {
-              store: {
+              content: {
                 data: {
-                  type: 'store',
-                  id: storage_container.id.to_s
+                  type: 'specimens',
+                  id: specimen.id
                 }
               }
             }
@@ -24,52 +24,46 @@ RSpec.describe "Containers", type: :resource do
       end
   
       let(:instance) do
-        Containers::PositionResource.build(payload)
+        Containers::PositionResource.find(payload)
       end
   
-      it 'works' do
+      it 'stores items in the content polymorphic' do
         expect {
-          expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-        }.to change { StorageContainerPosition.count }.by(1)
+          expect(instance.update_attributes).to eq(true)
+        }.to change { storage_container_position.reload.content_id }
+         .and change { storage_container_position.content_type }.to("specimen")
       end
     end
-  
-    describe 'updating' do
+    describe 'add container via update' do
       let!(:storage_container_position) { create(:storage_container_position) }
-  
+      let!(:storage_container) { create(:storage_container) }      
       let(:payload) do
         {
           data: {
             id: storage_container_position.id.to_s,
             type: 'positions',
-            attributes: { } # Todo!
+            attributes: { },
+            relationships: {
+              content: {
+                data: {
+                  type: 'stores',
+                  id: storage_container.id
+                }
+              }
+            }
           }
         }
       end
   
       let(:instance) do
-        StorageContainerPositionResource.find(payload)
+        Containers::PositionResource.find(payload)
       end
   
-      xit 'works (add some attributes and enable this spec)' do
+      it 'stores items in the content polymorphic' do
         expect {
           expect(instance.update_attributes).to eq(true)
-        }.to change { storage_container_position.reload.updated_at }
-        # .and change { storage_container_position.foo }.to('bar') <- example
-      end
-    end
-  
-    describe 'destroying' do
-      let!(:storage_container_position) { create(:storage_container_position) }
-  
-      let(:instance) do
-        Containers::PositionResource.find(id: storage_container_position.id)
-      end
-  
-      it 'works' do
-        expect {
-          expect(instance.destroy).to eq(true)
-        }.to change { StorageContainerPosition.count }.by(-1)
+        }.to change { storage_container_position.reload.content_id }
+         .and change { storage_container_position.content_type }.to("storage_container")
       end
     end
   end  

@@ -1,7 +1,6 @@
 module Containers
   class StoreResource < ApplicationResource
-    self.model = StorageContainer
-    
+    self.model = Store
     belongs_to :template
     
     attribute :name, :string

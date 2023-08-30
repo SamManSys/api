@@ -140,16 +140,34 @@
           "writable": true,
           "description": null
         },
+        "content_id": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_type": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
         "position_x": {
           "type": "string",
           "readable": true,
-          "writable": true,
+          "writable": false,
           "description": null
         },
         "position_y": {
           "type": "string",
           "readable": true,
-          "writable": true,
+          "writable": false,
           "description": null
         }
       },
@@ -157,10 +175,6 @@
       },
       "sorts": {
         "id": {
-        },
-        "position_x": {
-        },
-        "position_y": {
         }
       },
       "filters": {
@@ -173,36 +187,6 @@
             "gte",
             "lt",
             "lte"
-          ]
-        },
-        "position_x": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "position_y": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
           ]
         }
       },
@@ -2351,9 +2335,6 @@
           "resource": "Containers::PositionResource"
         },
         "update": {
-          "resource": "Containers::PositionResource"
-        },
-        "destroy": {
           "resource": "Containers::PositionResource"
         }
       }

@@ -19,15 +19,5 @@ module Containers
         render jsonapi_errors: position
       end
     end
-  
-    def destroy
-      position = PositionResource.find(params)
-  
-      if position.destroy
-        render jsonapi: { meta: {} }, status: 200
-      else
-        render jsonapi_errors: position
-      end
-    end
   end  
 end

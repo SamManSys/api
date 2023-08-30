@@ -3,13 +3,17 @@ module Containers
     self.model = StorageContainerPosition
     polymorphic_belongs_to :content do
       group_by(:content_type) do
-        on(:Store)
-        on(:Specimen)
+        on(:store)
+        on(:sample)
       end
     end
     belongs_to :store
   
-    attribute :position_x, :string
-    attribute :position_y, :string
+    attribute :content_id, :string, only: [:readable]
+    attribute :content_type, :string, only: [:readable]
+    attribute :content_name, :string, only: [:readable]
+
+    attribute :position_x, :string, only: [:readable]
+    attribute :position_y, :string, only: [:readable]
   end  
 end

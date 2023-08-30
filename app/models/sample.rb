@@ -1,4 +1,4 @@
-class Specimen < ApplicationRecord  
+class Sample < ApplicationRecord  
   belongs_to :specimen_collection
   default_scope { where.not(status: :disabled)}
 
