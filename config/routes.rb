@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
-    resources :storage_container_positions
-    resources :storage_container_templates
-    resources :storage_containers
     resources :patient_identifiers
     resources :patients
     resources :registration_to_cps
@@ -18,6 +15,12 @@ Rails.application.routes.draw do
       resources :questions
       resources :responses
       resources :forms
+    end
+
+    scope path: 'containers', module: 'containers' do
+      resources :templates
+      resources :stores
+      resources :positions
     end
     mount VandalUi::Engine, at: '/vandal'
   end

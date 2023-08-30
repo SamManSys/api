@@ -5,4 +5,5 @@ class StorageContainerPosition < ApplicationRecord
   validates_presence_of :position_x
   validates_presence_of :position_y
 
+  alias_attribute :store, :storage_container
 end
