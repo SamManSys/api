@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     scope path: 'containers', module: 'containers' do
       resources :templates
       resources :stores
-      resources :positions
+      resources :positions, except: [:create]
     end
     mount VandalUi::Engine, at: '/vandal'
   end

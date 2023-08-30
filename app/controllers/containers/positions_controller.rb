@@ -9,17 +9,7 @@ module Containers
       position = PositionResource.find(params)
       respond_with(position)
     end
-  
-    def create
-      position = PositionResource.build(params)
-  
-      if position.save
-        render jsonapi: position, status: 201
-      else
-        render jsonapi_errors: position
-      end
-    end
-  
+   
     def update
       position = PositionResource.find(params)
   

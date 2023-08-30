@@ -31,12 +31,10 @@ RSpec.describe "containers", type: :request do
         }
       end
 
-      it 'works' do
-        expect(Containers::PositionResource).to receive(:build).and_call_original
+      it 'will not allow a consumer to create' do        
         expect {
-          make_request
-          expect(response.status).to eq(201), response.body
-        }.to change { StorageContainerPosition.count }.by(1)
+          make_request          
+        }.to raise_error ActionController::RoutingError
       end
     end
   end

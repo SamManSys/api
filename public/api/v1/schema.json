@@ -2350,9 +2350,6 @@
         "show": {
           "resource": "Containers::PositionResource"
         },
-        "create": {
-          "resource": "Containers::PositionResource"
-        },
         "update": {
           "resource": "Containers::PositionResource"
         },
