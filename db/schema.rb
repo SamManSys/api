@@ -143,13 +143,13 @@ ActiveRecord::Schema.define(version: 20220523150620) do
     t.datetime "updated_at"
   end
 
-  create_table "extra_specimen_identifiers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "specimen_id"
+  create_table "extra_sample_identifiers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "sample_id"
     t.string "name"
     t.string "value"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["specimen_id"], name: "fk_rails_77621f5a7e"
+    t.index ["sample_id"], name: "fk_rails_77621f5a7e"
   end
 
   create_table "general_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -176,16 +176,16 @@ ActiveRecord::Schema.define(version: 20220523150620) do
 
   create_table "hazard_types_specimens", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "hazard_type_id"
-    t.integer "specimen_id"
+    t.integer "sample_id"
   end
 
   create_table "hazards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "specimen_id"
+    t.bigint "sample_id"
     t.string "hazard_type"
     t.text "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["specimen_id"], name: "fk_rails_86f585b65c"
+    t.index ["sample_id"], name: "fk_rails_86f585b65c"
   end
 
   create_table "identifier_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -287,21 +287,21 @@ ActiveRecord::Schema.define(version: 20220523150620) do
 
   create_table "shipment_containers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "shipment_id"
-    t.bigint "storage_container_id"
+    t.bigint "store_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["shipment_id"], name: "fk_rails_a72d2d960f"
-    t.index ["storage_container_id"], name: "fk_rails_471f11af7c"
+    t.index ["store_id"], name: "fk_rails_471f11af7c"
   end
 
   create_table "shipment_specimens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "shipment_id"
-    t.bigint "specimen_id"
+    t.bigint "sample_id"
     t.boolean "consent_checked"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["shipment_id"], name: "fk_rails_c72c1f7585"
-    t.index ["specimen_id"], name: "fk_rails_0fcfc597b3"
+    t.index ["sample_id"], name: "fk_rails_0fcfc597b3"
   end
 
   create_table "shipments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -346,22 +346,22 @@ ActiveRecord::Schema.define(version: 20220523150620) do
   end
 
   create_table "specimen_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "specimen_id"
+    t.bigint "sample_id"
     t.datetime "happened_at"
     t.integer "user_id"
     t.text "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "specimen_event"
-    t.index ["specimen_id"], name: "fk_rails_91c6dc58f3"
+    t.index ["sample_id"], name: "fk_rails_91c6dc58f3"
   end
 
   create_table "specimen_list_specimens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "specimen_list_id"
-    t.bigint "specimen_id"
+    t.bigint "sample_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["specimen_id"], name: "fk_rails_b4e9bafa6f"
+    t.index ["sample_id"], name: "fk_rails_b4e9bafa6f"
     t.index ["specimen_list_id"], name: "fk_rails_134949c1be"
   end
 
@@ -390,7 +390,7 @@ ActiveRecord::Schema.define(version: 20220523150620) do
     t.index ["specimen_collection_template_id"], name: "fk_rails_979a6342cc"
   end
 
-  create_table "specimens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "samples", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "label"
     t.string "barcode"
     t.bigint "specimen_collection_id"
@@ -416,16 +416,16 @@ ActiveRecord::Schema.define(version: 20220523150620) do
   end
 
   create_table "storage_container_collection_protocols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "storage_container_id"
+    t.bigint "store_id"
     t.bigint "collection_protocol_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["collection_protocol_id"], name: "fk_rails_a76cabc683"
-    t.index ["storage_container_id"], name: "fk_rails_1cb00279bd"
+    t.index ["store_id"], name: "fk_rails_1cb00279bd"
   end
 
   create_table "storage_container_positions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "storage_container_id"
+    t.bigint "store_id"
     t.string "position_x", limit: 5
     t.string "position_y", limit: 5
     t.string "content_type"
@@ -434,15 +434,15 @@ ActiveRecord::Schema.define(version: 20220523150620) do
     t.datetime "updated_at"
     t.string "content_name"
     t.index ["content_id", "content_type"], name: "idx_content"
-    t.index ["storage_container_id"], name: "fk_rails_be5892c1b3"
+    t.index ["store_id"], name: "fk_rails_be5892c1b3"
   end
 
   create_table "storage_container_restrictions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "storage_container_id"
+    t.bigint "store_id"
     t.string "content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["storage_container_id"], name: "fk_rails_67f51ff9ce"
+    t.index ["store_id"], name: "fk_rails_67f51ff9ce"
   end
 
   create_table "storage_container_template_restrictions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -463,7 +463,7 @@ ActiveRecord::Schema.define(version: 20220523150620) do
     t.datetime "updated_at"
   end
 
-  create_table "storage_containers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "stores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "storage_container_template_id"
     t.string "name"
     t.bigint "collection_protocol_id"
@@ -512,29 +512,29 @@ ActiveRecord::Schema.define(version: 20220523150620) do
   add_foreign_key "consent_questionnaire_questions", "consent_questionnaire_templates"
   add_foreign_key "consent_questionnaire_responses", "completed_consent_questionnaires"
   add_foreign_key "consent_questionnaire_responses", "consent_questionnaire_questions"
-  add_foreign_key "extra_specimen_identifiers", "specimens"
-  add_foreign_key "hazards", "specimens"
+  add_foreign_key "extra_sample_identifiers", "samples"
+  add_foreign_key "hazards", "samples"
   add_foreign_key "list_items", "general_lists"
   add_foreign_key "patient_identifiers", "patients"
   add_foreign_key "registration_to_cps", "collection_protocols"
   add_foreign_key "registration_to_cps", "patients"
   add_foreign_key "shipment_containers", "shipments"
-  add_foreign_key "shipment_containers", "storage_containers"
+  add_foreign_key "shipment_containers", "stores"
   add_foreign_key "shipment_specimens", "shipments"
-  add_foreign_key "shipment_specimens", "specimens"
+  add_foreign_key "shipment_specimens", "samples"
   add_foreign_key "specimen_collection_templates", "collection_protocols"
   add_foreign_key "specimen_collections", "registration_to_cps"
-  add_foreign_key "specimen_histories", "specimens"
+  add_foreign_key "specimen_histories", "samples"
   add_foreign_key "specimen_list_specimens", "specimen_lists"
-  add_foreign_key "specimen_list_specimens", "specimens"
+  add_foreign_key "specimen_list_specimens", "samples"
   add_foreign_key "specimen_templates", "specimen_collection_templates"
-  add_foreign_key "specimens", "specimen_collections"
+  add_foreign_key "samples", "specimen_collections"
   add_foreign_key "storage_container_collection_protocols", "collection_protocols"
-  add_foreign_key "storage_container_collection_protocols", "storage_containers"
-  add_foreign_key "storage_container_positions", "storage_containers"
-  add_foreign_key "storage_container_restrictions", "storage_containers"
+  add_foreign_key "storage_container_collection_protocols", "stores"
+  add_foreign_key "storage_container_positions", "stores"
+  add_foreign_key "storage_container_restrictions", "stores"
   add_foreign_key "storage_container_template_restrictions", "storage_container_templates"
-  add_foreign_key "storage_containers", "collection_protocols"
-  add_foreign_key "storage_containers", "storage_container_templates"
+  add_foreign_key "stores", "collection_protocols"
+  add_foreign_key "stores", "storage_container_templates"
   add_foreign_key "template_restrictions", "storage_container_templates"
 end
