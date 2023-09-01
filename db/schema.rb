@@ -386,7 +386,7 @@ ActiveRecord::Schema.define(version: 2023_08_31_090830) do
   end
 
   create_table "stores_containers", charset: "utf8mb3", force: :cascade do |t|
-    t.bigint "storage_container_template_id"
+    t.bigint "stores_template_id"
     t.string "name"
     t.bigint "collection_protocol_id"
     t.datetime "created_at"
@@ -397,7 +397,7 @@ ActiveRecord::Schema.define(version: 2023_08_31_090830) do
     t.string "parent"
     t.string "ancestors"
     t.index ["collection_protocol_id"], name: "fk_rails_b236fec2dd"
-    t.index ["storage_container_template_id"], name: "fk_rails_eada6cd9f9"
+    t.index ["stores_template_id"], name: "fk_rails_eada6cd9f9"
   end
 
   create_table "stores_positions", charset: "utf8mb3", force: :cascade do |t|
@@ -454,6 +454,6 @@ ActiveRecord::Schema.define(version: 2023_08_31_090830) do
   add_foreign_key "shipment_samples", "samples"
   add_foreign_key "shipment_samples", "shipments"
   add_foreign_key "stores_containers", "collection_protocols"
-  add_foreign_key "stores_containers", "stores_templates", column: "storage_container_template_id"
+  add_foreign_key "stores_containers", "stores_templates"
   add_foreign_key "stores_positions", "stores_containers"
 end

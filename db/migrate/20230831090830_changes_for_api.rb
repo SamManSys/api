@@ -8,7 +8,7 @@ class ChangesForApi < ActiveRecord::Migration[6.1]
     rename_column 'shipment_containers', 'storage_container_id', 'stores_container_id'
     rename_column 'storage_container_collection_protocols', 'storage_container_id', 'stores_container_id'
     rename_column 'stores_positions', 'storage_container_id', 'stores_container_id'
-
+    rename_column 'stores_container', 'storage_container_template_id', 'stores_template_id'
     # Questionnaires
     rename_table 'completed_consent_questionnaires', 'questionnaires_forms'
     rename_table 'consent_questionnaire_questions', 'questionnaires_questions'

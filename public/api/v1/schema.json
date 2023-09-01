@@ -129,374 +129,6 @@
       }
     },
     {
-      "name": "Containers::PositionResource",
-      "type": "positions",
-      "graphql_entrypoint": "positions",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "content_id": {
-          "type": "string",
-          "readable": true,
-          "writable": false,
-          "description": null
-        },
-        "content_type": {
-          "type": "string",
-          "readable": true,
-          "writable": false,
-          "description": null
-        },
-        "content_name": {
-          "type": "string",
-          "readable": true,
-          "writable": false,
-          "description": null
-        },
-        "position_x": {
-          "type": "string",
-          "readable": true,
-          "writable": false,
-          "description": null
-        },
-        "position_y": {
-          "type": "string",
-          "readable": true,
-          "writable": false,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "content": {
-          "type": "polymorphic_belongs_to",
-          "description": null,
-          "resources": [
-            "Containers::StoreResource",
-            "SpecimenResource"
-          ],
-          "parent_resource": "Containers::PositionResource"
-        },
-        "store": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "Containers::StoreResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "Containers::StoreResource",
-      "type": "stores",
-      "graphql_entrypoint": "stores",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_x": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_y": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "barcode": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "size_x": {
-        },
-        "size_y": {
-        },
-        "barcode": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "size_x": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "size_y": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "barcode": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        }
-      },
-      "relationships": {
-        "template": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "Containers::TemplateResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "Containers::TemplateResource",
-      "type": "templates",
-      "graphql_entrypoint": "templates",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "label_x": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "label_y": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_x": {
-          "type": "integer",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_y": {
-          "type": "integer",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "label_x": {
-        },
-        "label_y": {
-        },
-        "size_x": {
-        },
-        "size_y": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "label_x": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "label_y": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "size_x": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "size_y": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
       "name": "PatientIdentifierResource",
       "type": "patient_identifiers",
       "graphql_entrypoint": "patientIdentifiers",
@@ -1216,7 +848,7 @@
     {
       "name": "SampleResource",
       "type": "samples",
-      "graphql_entrypoint": "specimens",
+      "graphql_entrypoint": "samples",
       "description": null,
       "attributes": {
         "id": {
@@ -1741,10 +1373,10 @@
         }
       },
       "relationships": {
-        "specimen": {
+        "sample": {
           "type": "belongs_to",
           "description": null,
-          "resource": "SpecimenResource"
+          "resource": "SampleResource"
         },
         "shipment": {
           "type": "belongs_to",
@@ -1994,10 +1626,10 @@
         }
       },
       "relationships": {
-        "specimens": {
+        "samples": {
           "type": "has_many",
           "description": null,
-          "resource": "SpecimenResource"
+          "resource": "SampleResource"
         }
       },
       "stats": {
@@ -2007,9 +1639,9 @@
       }
     },
     {
-      "name": "SpecimenResource",
-      "type": "specimens",
-      "graphql_entrypoint": "specimens",
+      "name": "StoresContainerResource",
+      "type": "stores_containers",
+      "graphql_entrypoint": "storesContainers",
       "description": null,
       "attributes": {
         "id": {
@@ -2018,7 +1650,19 @@
           "writable": true,
           "description": null
         },
-        "label": {
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_x": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_y": {
           "type": "string",
           "readable": true,
           "writable": true,
@@ -2026,60 +1670,6 @@
         },
         "barcode": {
           "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_class": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_type": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "comments": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "born_on": {
-          "type": "date",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "site": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "side": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "availability": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "available_quantity": {
-          "type": "float",
           "readable": true,
           "writable": true,
           "description": null
@@ -2090,25 +1680,13 @@
       "sorts": {
         "id": {
         },
-        "label": {
+        "name": {
+        },
+        "size_x": {
+        },
+        "size_y": {
         },
         "barcode": {
-        },
-        "specimen_class": {
-        },
-        "specimen_type": {
-        },
-        "born_on": {
-        },
-        "status": {
-        },
-        "site": {
-        },
-        "side": {
-        },
-        "availability": {
-        },
-        "available_quantity": {
         }
       },
       "filters": {
@@ -2123,7 +1701,37 @@
             "lte"
           ]
         },
-        "label": {
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "size_x": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "size_y": {
           "type": "string",
           "operators": [
             "eq",
@@ -2152,54 +1760,167 @@
             "match",
             "not_match"
           ]
+        }
+      },
+      "relationships": {
+        "stores_template": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "StoresTemplateResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "StoresPositionResource",
+      "type": "stores_positions",
+      "graphql_entrypoint": "storesPositions",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
         },
-        "specimen_class": {
+        "content_id": {
           "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_type": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "position_x": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "position_y": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
           "operators": [
             "eq",
             "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
+            "gt",
+            "gte",
+            "lt",
+            "lte"
           ]
+        }
+      },
+      "relationships": {
+        "content": {
+          "type": "polymorphic_belongs_to",
+          "description": null,
+          "resources": [
+            "StoresContainerResource",
+            "SampleResource"
+          ],
+          "parent_resource": "StoresPositionResource"
         },
-        "specimen_type": {
+        "stores_container": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "StoresContainerResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "StoresTemplateResource",
+      "type": "stores_templates",
+      "graphql_entrypoint": "storesTemplates",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
           "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
+          "readable": true,
+          "writable": true,
+          "description": null
         },
-        "comments": {
+        "label_x": {
           "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
+          "readable": true,
+          "writable": true,
+          "description": null
         },
-        "born_on": {
-          "type": "date",
+        "label_y": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_x": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "size_y": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        },
+        "label_x": {
+        },
+        "label_y": {
+        },
+        "size_x": {
+        },
+        "size_y": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
           "operators": [
             "eq",
             "not_eq",
@@ -2209,7 +1930,7 @@
             "lte"
           ]
         },
-        "status": {
+        "name": {
           "type": "string",
           "operators": [
             "eq",
@@ -2224,7 +1945,7 @@
             "not_match"
           ]
         },
-        "site": {
+        "label_x": {
           "type": "string",
           "operators": [
             "eq",
@@ -2239,7 +1960,7 @@
             "not_match"
           ]
         },
-        "side": {
+        "label_y": {
           "type": "string",
           "operators": [
             "eq",
@@ -2254,23 +1975,8 @@
             "not_match"
           ]
         },
-        "availability": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "available_quantity": {
-          "type": "float",
+        "size_x": {
+          "type": "integer",
           "operators": [
             "eq",
             "not_eq",
@@ -2280,7 +1986,7 @@
             "lte"
           ]
         },
-        "specimen_collection_id": {
+        "size_y": {
           "type": "integer",
           "operators": [
             "eq",
@@ -2293,11 +1999,6 @@
         }
       },
       "relationships": {
-        "specimen_collection": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "SpecimenCollectionResource"
-        }
       },
       "stats": {
         "total": [
@@ -2323,57 +2024,6 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
-        }
-      }
-    },
-    "/api/v1/containers/positions": {
-      "actions": {
-        "index": {
-          "resource": "Containers::PositionResource"
-        },
-        "show": {
-          "resource": "Containers::PositionResource"
-        },
-        "update": {
-          "resource": "Containers::PositionResource"
-        }
-      }
-    },
-    "/api/v1/containers/stores": {
-      "actions": {
-        "index": {
-          "resource": "Containers::StoreResource"
-        },
-        "show": {
-          "resource": "Containers::StoreResource"
-        },
-        "create": {
-          "resource": "Containers::StoreResource"
-        },
-        "update": {
-          "resource": "Containers::StoreResource"
-        },
-        "destroy": {
-          "resource": "Containers::StoreResource"
-        }
-      }
-    },
-    "/api/v1/containers/templates": {
-      "actions": {
-        "index": {
-          "resource": "Containers::TemplateResource"
-        },
-        "show": {
-          "resource": "Containers::TemplateResource"
-        },
-        "create": {
-          "resource": "Containers::TemplateResource"
-        },
-        "update": {
-          "resource": "Containers::TemplateResource"
-        },
-        "destroy": {
-          "resource": "Containers::TemplateResource"
         }
       }
     },
@@ -2574,25 +2224,6 @@
         },
         "destroy": {
           "resource": "SpecimenCollectionResource"
-        }
-      }
-    },
-    "/api/v1/specimens": {
-      "actions": {
-        "index": {
-          "resource": "SpecimenResource"
-        },
-        "show": {
-          "resource": "SpecimenResource"
-        },
-        "create": {
-          "resource": "SpecimenResource"
-        },
-        "update": {
-          "resource": "SpecimenResource"
-        },
-        "destroy": {
-          "resource": "SpecimenResource"
         }
       }
     }

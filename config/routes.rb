@@ -17,11 +17,10 @@ Rails.application.routes.draw do
       resources :forms
     end
 
-    scope path: 'containers', module: 'containers' do
-      resources :templates
-      resources :stores
-      resources :positions, only: [:index, :show, :update]
-    end
+    resources :stores_templates
+    resources :stores_containers
+    resources :stores_positions, only: [:index, :show, :update]
+  
     mount VandalUi::Engine, at: '/vandal'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

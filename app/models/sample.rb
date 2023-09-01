@@ -1,5 +1,5 @@
 class Sample < ApplicationRecord  
-  belongs_to :specimen_collection
+  belongs_to :sample_collection
   default_scope { where.not(status: :disabled)}
 
   validates_presence_of :label

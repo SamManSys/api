@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :specimen_collection do |f|
+  factory :sample_collection do |f|
     sequence(:study_point_name) { |n| "SC Study point: #{n}" }
     status { :active }
 

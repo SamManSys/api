@@ -1,5 +1,5 @@
-class SpecimenCollection < ApplicationRecord  
-  has_many :specimens
+class SampleCollection < ApplicationRecord  
+  has_many :samples
 
   default_scope { where.not(status: :disabled)}
 

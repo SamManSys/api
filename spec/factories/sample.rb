@@ -1,11 +1,11 @@
 FactoryBot.define do
-  factory :specimen do
+  factory :sample do
     sequence(:label) { |n| "ZZ#{n}" }
     sequence(:barcode) { |n| "#{n}" }
     availability { 'available' }
     status { :active }
 
-    association :specimen_collection
+    association :sample_collection
     
     trait :closed do
       status { :closed }
@@ -20,13 +20,13 @@ FactoryBot.define do
     end
 
     trait :tissue do
-      specimen_class { "Fresh" }
-      specimen_type  { "Tissue" }
+      sample_class { "Fresh" }
+      sample_type  { "Tissue" }
     end
 
     trait :fluid do
-      specimen_class { "Fluid" }
-      specimen_type  { "Blood" }
+      sample_class { "Fluid" }
+      sample_type  { "Blood" }
     end
   end
 end

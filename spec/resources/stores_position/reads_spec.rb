@@ -1,37 +1,37 @@
 require 'rails_helper'
 
-RSpec.describe Containers::StoreResource, type: :resource do
+describe StoresPositionResource, type: :resource do
   describe 'serialization' do
-    let!(:store) { create(:store) }
+    let!(:store_position) { create(:stores_position) }
 
     it 'works' do
       render
       data = jsonapi_data[0]
-      expect(data.id).to eq(store.id)
-      expect(data.jsonapi_type).to eq('stores')
+      expect(data.id).to eq(store_position.id)
+      expect(data.jsonapi_type).to eq('stores_positions')
     end
   end
 
   describe 'filtering' do
-    let!(:store1) { create(:store) }
-    let!(:store2) { create(:store) }
+    let!(:store_position1) { create(:stores_position) }
+    let!(:store_position2) { create(:stores_position) }
 
     context 'by id' do
       before do
-        params[:filter] = { id: { eq: store2.id } }
+        params[:filter] = { id: { eq: store_position2.id } }
       end
 
       it 'works' do
         render
-        expect(d.map(&:id)).to eq([store2.id])
+        expect(d.map(&:id)).to eq([store_position2.id])
       end
     end
   end
 
   describe 'sorting' do
     describe 'by id' do
-      let!(:store1) { create(:store) }
-      let!(:store2) { create(:store) }
+      let!(:store_position1) { create(:stores_position) }
+      let!(:store_position2) { create(:stores_position) }
 
       context 'when ascending' do
         before do
@@ -41,8 +41,8 @@ RSpec.describe Containers::StoreResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            store1.id,
-            store2.id
+            store_position1.id,
+            store_position2.id
           ])
         end
       end
@@ -55,8 +55,8 @@ RSpec.describe Containers::StoreResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            store2.id,
-            store1.id
+            store_position2.id,
+            store_position1.id
           ])
         end
       end
@@ -67,3 +67,4 @@ RSpec.describe Containers::StoreResource, type: :resource do
     # ... your tests ...
   end
 end
+

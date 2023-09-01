@@ -1,5 +1,5 @@
 class ShipmentSpecimenResource < ApplicationResource
-  belongs_to :specimen
+  belongs_to :sample
   belongs_to :shipment
 
   attribute :specimen_id, :integer, only: [:filterable]

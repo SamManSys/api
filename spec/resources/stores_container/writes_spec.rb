@@ -1,20 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe Containers::StoreResource, type: :resource do
+RSpec.describe StoresContainerResource, type: :resource do
   describe 'creating' do
-    let(:storage_container_template) {
-      create(:storage_container_template)
+    let(:stores_template) {
+      create(:stores_template)
     }    
     let(:payload) do
       {
         data: {
-          type: 'stores',
-          attributes: attributes_for(:store),
+          type: 'stores_containers',
+          attributes: attributes_for(:stores_container),
           relationships: {
-            template: {
+            stores_template: {
               data: {
-                type: 'templates',
-                id: storage_container_template.id.to_s
+                type: 'stores_templates',
+                id: stores_template.id.to_s
               }
             }
           }
@@ -23,31 +23,31 @@ RSpec.describe Containers::StoreResource, type: :resource do
     end
 
     let(:instance) do
-      Containers::StoreResource.build(payload)
+      StoresContainerResource.build(payload)
     end
 
     it 'works' do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { Store.count }.by(1)
+      }.to change { StoresContainer.count }.by(1)
     end
   end
 
   describe 'updating' do
-    let!(:store) { create(:store) }
+    let!(:store) { create(:stores_container) }
 
     let(:payload) do
       {
         data: {
           id: store.id.to_s,
-          type: 'stores',
+          type: 'stores_containers',
           attributes: { } # Todo!
         }
       }
     end
 
     let(:instance) do
-      Containers::StoreResource.find(payload)
+      StoresContainerResource.find(payload)
     end
 
     xit 'works (add some attributes and enable this spec)' do
@@ -59,16 +59,16 @@ RSpec.describe Containers::StoreResource, type: :resource do
   end
 
   describe 'destroying' do
-    let!(:store) { create(:store) }
+    let!(:store) { create(:stores_container) }
 
     let(:instance) do
-      Containers::StoreResource.find(id: store.id)
+      StoresContainerResource.find(id: store.id)
     end
 
     it 'works' do
       expect {
         expect(instance.destroy).to eq(true)
-      }.to change { Store.count }.by(-1)
+      }.to change { StoresContainer.count }.by(-1)
     end
   end
 end
