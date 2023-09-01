@@ -182,13 +182,13 @@ ActiveRecord::Schema.define(version: 2023_08_31_090830) do
   end
 
   create_table "questionnaires_questions", charset: "utf8mb3", force: :cascade do |t|
-    t.bigint "consent_questionnaire_template_id"
+    t.bigint "questionnaires_template_id"
     t.integer "position"
     t.text "question"
     t.string "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["consent_questionnaire_template_id"], name: "fk_rails_7785abbe56"
+    t.index ["questionnaires_template_id"], name: "fk_rails_7785abbe56"
   end
 
   create_table "questionnaires_responses", charset: "utf8mb3", force: :cascade do |t|
@@ -436,7 +436,7 @@ ActiveRecord::Schema.define(version: 2023_08_31_090830) do
   add_foreign_key "list_items", "general_lists"
   add_foreign_key "patient_identifiers", "patients"
   add_foreign_key "questionnaires_forms", "registration_to_cps"
-  add_foreign_key "questionnaires_questions", "questionnaires_templates", column: "consent_questionnaire_template_id"
+  add_foreign_key "questionnaires_questions", "questionnaires_templates"
   add_foreign_key "questionnaires_responses", "questionnaires_forms"
   add_foreign_key "questionnaires_responses", "questionnaires_questions"
   add_foreign_key "registration_to_cps", "collection_protocols"

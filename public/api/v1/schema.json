@@ -344,9 +344,9 @@
       }
     },
     {
-      "name": "Questionnaires::FormResource",
-      "type": "forms",
-      "graphql_entrypoint": "forms",
+      "name": "QuestionnairesFormResource",
+      "type": "questionnaires_forms",
+      "graphql_entrypoint": "questionnairesForms",
       "description": null,
       "attributes": {
         "id": {
@@ -495,10 +495,10 @@
           "description": null,
           "resource": "RegistrationToCpResource"
         },
-        "responses": {
+        "questionnaires_responses": {
           "type": "has_many",
           "description": null,
-          "resource": "Questionnaires::ResponseResource"
+          "resource": "QuestionnairesResponseResource"
         }
       },
       "stats": {
@@ -508,9 +508,9 @@
       }
     },
     {
-      "name": "Questionnaires::QuestionResource",
-      "type": "questions",
-      "graphql_entrypoint": "questions",
+      "name": "QuestionnairesQuestionResource",
+      "type": "questionnaires_questions",
+      "graphql_entrypoint": "questionnairesQuestions",
       "description": null,
       "attributes": {
         "id": {
@@ -605,10 +605,10 @@
         }
       },
       "relationships": {
-        "template": {
+        "questionnaires_template": {
           "type": "belongs_to",
           "description": null,
-          "resource": "Questionnaires::TemplateResource"
+          "resource": "QuestionnairesTemplateResource"
         }
       },
       "stats": {
@@ -618,9 +618,9 @@
       }
     },
     {
-      "name": "Questionnaires::ResponseResource",
-      "type": "responses",
-      "graphql_entrypoint": "responses",
+      "name": "QuestionnairesResponseResource",
+      "type": "questionnaires_responses",
+      "graphql_entrypoint": "questionnairesResponses",
       "description": null,
       "attributes": {
         "id": {
@@ -673,15 +673,15 @@
         }
       },
       "relationships": {
-        "question": {
+        "questionnaires_question": {
           "type": "belongs_to",
           "description": null,
-          "resource": "Questionnaires::QuestionResource"
+          "resource": "QuestionnairesQuestionResource"
         },
-        "form": {
+        "questionnaires_form": {
           "type": "belongs_to",
           "description": null,
-          "resource": "Questionnaires::FormResource"
+          "resource": "QuestionnairesFormResource"
         }
       },
       "stats": {
@@ -691,9 +691,9 @@
       }
     },
     {
-      "name": "Questionnaires::TemplateResource",
-      "type": "templates",
-      "graphql_entrypoint": "templates",
+      "name": "QuestionnairesTemplateResource",
+      "type": "questionnaires_templates",
+      "graphql_entrypoint": "questionnairesTemplates",
       "description": null,
       "attributes": {
         "id": {
@@ -2062,82 +2062,6 @@
         },
         "destroy": {
           "resource": "PatientResource"
-        }
-      }
-    },
-    "/api/v1/questionnaires/forms": {
-      "actions": {
-        "index": {
-          "resource": "Questionnaires::FormResource"
-        },
-        "show": {
-          "resource": "Questionnaires::FormResource"
-        },
-        "create": {
-          "resource": "Questionnaires::FormResource"
-        },
-        "update": {
-          "resource": "Questionnaires::FormResource"
-        },
-        "destroy": {
-          "resource": "Questionnaires::FormResource"
-        }
-      }
-    },
-    "/api/v1/questionnaires/questions": {
-      "actions": {
-        "index": {
-          "resource": "Questionnaires::QuestionResource"
-        },
-        "show": {
-          "resource": "Questionnaires::QuestionResource"
-        },
-        "create": {
-          "resource": "Questionnaires::QuestionResource"
-        },
-        "update": {
-          "resource": "Questionnaires::QuestionResource"
-        },
-        "destroy": {
-          "resource": "Questionnaires::QuestionResource"
-        }
-      }
-    },
-    "/api/v1/questionnaires/responses": {
-      "actions": {
-        "index": {
-          "resource": "Questionnaires::ResponseResource"
-        },
-        "show": {
-          "resource": "Questionnaires::ResponseResource"
-        },
-        "create": {
-          "resource": "Questionnaires::ResponseResource"
-        },
-        "update": {
-          "resource": "Questionnaires::ResponseResource"
-        },
-        "destroy": {
-          "resource": "Questionnaires::ResponseResource"
-        }
-      }
-    },
-    "/api/v1/questionnaires/templates": {
-      "actions": {
-        "index": {
-          "resource": "Questionnaires::TemplateResource"
-        },
-        "show": {
-          "resource": "Questionnaires::TemplateResource"
-        },
-        "create": {
-          "resource": "Questionnaires::TemplateResource"
-        },
-        "update": {
-          "resource": "Questionnaires::TemplateResource"
-        },
-        "destroy": {
-          "resource": "Questionnaires::TemplateResource"
         }
       }
     },

@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :consent_questionnaire_question do
-    association :consent_questionnaire_template
+  factory :questionnaires_question do
+    association :questionnaires_template
 
     question { "The question"}
     position { 0 }

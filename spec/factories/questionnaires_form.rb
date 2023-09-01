@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :completed_consent_questionnaire do
+  factory :questionnaires_form do
     association :registration_to_cp
 
     signed_date { Date.today }

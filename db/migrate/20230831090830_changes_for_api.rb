@@ -14,11 +14,12 @@ class ChangesForApi < ActiveRecord::Migration[6.1]
     rename_table 'consent_questionnaire_questions', 'questionnaires_questions'
     rename_table 'consent_questionnaire_responses', 'questionnaires_responses'
     rename_table 'consent_questionnaire_templates', 'questionnaires_templates'
-
+    
     rename_column 'questionnaires_responses', 'completed_consent_questionnaire_id', 'questionnaires_form_id'
     rename_column 'questionnaires_responses', 'consent_questionnaire_question_id', 'questionnaires_question_id'
     rename_column 'active_consent_questionnaire_templates', 'consent_questionnaire_template_id', 'questionnaires_template_id'
-
+    rename_column 'questionnaires_questions', 'consent_questionnaire_template_id', 'questionnaires_template_id'
+    
     # Samples
     rename_table 'specimens', 'samples'
     rename_table 'extra_specimen_identifiers', 'sample_extra_identifiers'

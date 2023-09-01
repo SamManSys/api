@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Questionnaires::FormResource, type: :resource do
+RSpec.describe QuestionnairesFormResource, type: :resource do
   describe 'creating' do
     let(:registration_to_cp) {
       create(:registration_to_cp)
@@ -9,7 +9,7 @@ RSpec.describe Questionnaires::FormResource, type: :resource do
       {
         data: {
           type: 'forms',
-          attributes: attributes_for(:completed_consent_questionnaire),
+          attributes: attributes_for(:questionnaires_form),
           relationships: {
             registration_to_cp: {
               data: {
@@ -23,26 +23,26 @@ RSpec.describe Questionnaires::FormResource, type: :resource do
     end
 
     let(:instance) do
-      Questionnaires::FormResource.build(payload)
+      QuestionnairesFormResource.build(payload)
     end
 
     it 'works' do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { CompletedConsentQuestionnaire.count }.by(1)
+      }.to change { QuestionnairesForm.count }.by(1)
     end
   end
 
   describe 'updating' do
-    let!(:completed_consent_questionnaire) { create(:completed_consent_questionnaire) }
+    let!(:questionnaires_form) { create(:questionnaires_form) }
     let(:full_name) do
       Faker::Name.name
     end
     let(:payload) do
       {
         data: {
-          id: completed_consent_questionnaire.id.to_s,
-          type: 'forms',
+          id: questionnaires_form.id.to_s,
+          type: 'questionnaires_forms',
           attributes: { 
             witness_name: full_name
           }
@@ -51,27 +51,27 @@ RSpec.describe Questionnaires::FormResource, type: :resource do
     end
 
     let(:instance) do
-      Questionnaires::FormResource.find(payload)
+      QuestionnairesFormResource.find(payload)
     end
 
     it 'works (add some attributes and enable this spec)' do
       expect {
         expect(instance.update_attributes).to eq(true)
-      }.to change { completed_consent_questionnaire.reload.witness_name }.to(full_name)
+      }.to change { questionnaires_form.reload.witness_name }.to(full_name)
     end
   end
 
   describe 'destroying' do
-    let!(:completed_consent_questionnaire) { create(:completed_consent_questionnaire) }
+    let!(:questionnaires_form) { create(:questionnaires_form) }
 
     let(:instance) do
-      Questionnaires::FormResource.find(id: completed_consent_questionnaire.id)
+      QuestionnairesFormResource.find(id: questionnaires_form.id)
     end
 
     it 'works' do
       expect {
         expect(instance.destroy).to eq(true)
-      }.to change { CompletedConsentQuestionnaire.count }.by(-1)
+      }.to change { QuestionnairesForm.count }.by(-1)
     end
   end
 end

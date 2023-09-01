@@ -8,15 +8,12 @@ Rails.application.routes.draw do
     resources :shipment_specimens, only: [:create, :destroy]
     resources :shipments
     resources :specimen_collections
-    resources :specimens
-    
-    scope path: 'questionnaires', module: 'questionnaires' do
-      resources :templates
-      resources :questions
-      resources :responses
-      resources :forms
-    end
-
+  
+    resources :questionnaires_templates
+    resources :questionnaires_questions
+    resources :questionnaires_responses
+    resources :questionnaires_forms
+  
     resources :stores_templates
     resources :stores_containers
     resources :stores_positions, only: [:index, :show, :update]
