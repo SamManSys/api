@@ -6,5 +6,10 @@ FactoryBot.define do
     label_y { "Y" }
     size_x { 1 }
     size_y { 1 }
+
+    trait :four_by_four do
+      size_x { 4 }
+      size_y { 4 }  
+    end
   end
 end
