@@ -1,5 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'rspec-benchmark'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
@@ -36,7 +38,10 @@ RSpec.configure do |config|
   config.include GraphitiSpecHelpers::RSpec
   config.include GraphitiSpecHelpers::Sugar
   config.include Graphiti::Rails::TestHelpers
+  config.include RSpec::Benchmark::Matchers
 
+  config.filter_run_excluding perf: true
+  
   config.before :each do
     handle_request_exceptions(false)
   end

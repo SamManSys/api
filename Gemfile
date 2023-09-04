@@ -48,6 +48,7 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0beta2'
+  gem 'rspec-benchmark'
   gem 'factory_bot_rails', '~> 5.0'
   gem 'faker', '~> 2.5'
   gem 'graphiti_spec_helpers'
