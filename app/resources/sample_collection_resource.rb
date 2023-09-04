@@ -1,4 +1,4 @@
-class SpecimenCollectionResource < ApplicationResource
+class SampleCollectionResource < ApplicationResource
   has_many :samples
 
   attribute :study_point_name, :string

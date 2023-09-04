@@ -1,24 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe "shipment_specimens#destroy", type: :request do
+RSpec.describe "shipment_samples#destroy", type: :request do
   subject(:make_request) do
-    jsonapi_delete "/api/v1/shipment_specimens/#{@shipment_specimen.id}"
+    jsonapi_delete "/api/v1/shipment_samples/#{@shipment_sample.id}"
   end
 
   describe 'basic destroy' do
     before :each do
-      specimen = create(:specimen)
+      sample = create(:sample)
       shipment = create(:shipment)
-      @shipment_specimen = ShipmentSpecimen.create! specimen: specimen, shipment: shipment
+      @shipment_sample = ShipmentSample.create! sample: sample, shipment: shipment
     end
 
     it 'updates the resource' do
-      expect(ShipmentSpecimenResource).to receive(:find).and_call_original
+      expect(ShipmentSampleResource).to receive(:find).and_call_original
       expect {
         make_request
         expect(response.status).to eq(200), response.body
-      }.to change { ShipmentSpecimen.count }.by(-1)
-      expect { @shipment_specimen.reload }
+      }.to change { ShipmentSample.count }.by(-1)
+      expect { @shipment_sample.reload }
         .to raise_error(ActiveRecord::RecordNotFound)
       expect(json).to eq('meta' => {})
     end

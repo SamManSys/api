@@ -1,4 +1,4 @@
 class ActiveConsentQuestionnaireTemplate < ApplicationRecord
   belongs_to :collection_protocol
-  belongs_to :consent_questionnaire_template
+  belongs_to :questionnaires_template
 end

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe StorageContainer, :type => :model do
+RSpec.describe StoresContainer, :type => :model do
   describe "Validates presence of" do
-    let(:storage_container) { build(:storage_container) }
+    let(:storage_container) { build(:stores_container) }
 
     [:name, :size_x, :size_y].each do |field|
       it "#{field.to_s}" do

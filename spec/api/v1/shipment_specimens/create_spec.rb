@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "shipment_specimens#create", type: :request do
+RSpec.describe "shipment_samples#create", type: :request do
   subject(:make_request) do
-    jsonapi_post "/api/v1/shipment_specimens", payload
+    jsonapi_post "/api/v1/shipment_samples", payload
   end
 
   describe 'basic create' do
-    let(:specimen) do
-      create :specimen
+    let(:sample) do
+      create :sample
     end
     let(:shipment) do
       create :shipment
@@ -15,12 +15,12 @@ RSpec.describe "shipment_specimens#create", type: :request do
     let(:payload) do
       {
         data: {
-          type: 'shipment_specimens',
+          type: 'shipment_samples',
           relationships: {
-            specimen: {
+            sample: {
               data: {
-                type: 'specimens',
-                id: specimen.id.to_s
+                type: 'samples',
+                id: sample.id.to_s
               } 
             },
             shipment: {
@@ -35,11 +35,11 @@ RSpec.describe "shipment_specimens#create", type: :request do
     end
 
     it 'works' do
-      expect(ShipmentSpecimenResource).to receive(:build).and_call_original
+      expect(ShipmentSampleResource).to receive(:build).and_call_original
       expect {
         make_request
         expect(response.status).to eq(201), response.body
-      }.to change { ShipmentSpecimen.count }.by(1)
+      }.to change { ShipmentSample.count }.by(1)
     end
   end
 end

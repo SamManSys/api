@@ -1,37 +1,37 @@
 require 'rails_helper'
 
-RSpec.describe SpecimenCollectionResource, type: :resource do
+RSpec.describe SampleCollectionResource, type: :resource do
   describe 'serialization' do
-    let!(:specimen_collection) { create(:specimen_collection) }
+    let!(:sample_collection) { create(:sample_collection) }
 
     it 'works' do
       render
       data = jsonapi_data[0]
-      expect(data.id).to eq(specimen_collection.id)
-      expect(data.jsonapi_type).to eq('specimen_collections')
+      expect(data.id).to eq(sample_collection.id)
+      expect(data.jsonapi_type).to eq('sample_collections')
     end
   end
 
   describe 'filtering' do
-    let!(:specimen_collection1) { create(:specimen_collection) }
-    let!(:specimen_collection2) { create(:specimen_collection) }
+    let!(:sample_collection1) { create(:sample_collection) }
+    let!(:sample_collection2) { create(:sample_collection) }
 
     context 'by id' do
       before do
-        params[:filter] = { id: { eq: specimen_collection2.id } }
+        params[:filter] = { id: { eq: sample_collection2.id } }
       end
 
       it 'works' do
         render
-        expect(d.map(&:id)).to eq([specimen_collection2.id])
+        expect(d.map(&:id)).to eq([sample_collection2.id])
       end
     end
   end
 
   describe 'sorting' do
     describe 'by id' do
-      let!(:specimen_collection1) { create(:specimen_collection) }
-      let!(:specimen_collection2) { create(:specimen_collection) }
+      let!(:sample_collection1) { create(:sample_collection) }
+      let!(:sample_collection2) { create(:sample_collection) }
 
       context 'when ascending' do
         before do
@@ -41,8 +41,8 @@ RSpec.describe SpecimenCollectionResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            specimen_collection1.id,
-            specimen_collection2.id
+            sample_collection1.id,
+            sample_collection2.id
           ])
         end
       end
@@ -55,8 +55,8 @@ RSpec.describe SpecimenCollectionResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            specimen_collection2.id,
-            specimen_collection1.id
+            sample_collection2.id,
+            sample_collection1.id
           ])
         end
       end

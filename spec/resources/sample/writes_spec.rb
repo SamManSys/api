@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe SampleResource, type: :resource do
   describe 'creating' do
-    let(:specimen_collection) { create(:specimen_collection) }
+    let(:sample_collection) { create(:sample_collection) }
     let(:params) do
-      attributes_for(:specimen)
+      attributes_for(:sample)
     end
     let(:payload) do
       {
@@ -12,10 +12,10 @@ RSpec.describe SampleResource, type: :resource do
           type: 'samples',
           attributes: params,
           relationships: {
-            specimen_collection: {
+            sample_collection: {
               data: {
-                type: 'specimen_collections',
-                id: specimen_collection.id.to_s
+                type: 'sample_collections',
+                id: sample_collection.id.to_s
               }
             }
           }
@@ -30,17 +30,17 @@ RSpec.describe SampleResource, type: :resource do
     it 'works' do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { Specimen.count }.by(1)
+      }.to change { Sample.count }.by(1)
     end
   end
 
   describe 'updating' do
-    let!(:specimen) { create(:specimen) }
+    let!(:sample) { create(:sample) }
 
     let(:payload) do
       {
         data: {
-          id: specimen.id.to_s,
+          id: sample.id.to_s,
           type: 'samples',
           attributes: { 
             label: "bar"
@@ -56,21 +56,21 @@ RSpec.describe SampleResource, type: :resource do
     it 'works' do
       expect {
         expect(instance.update_attributes).to eq(true)
-      }.to change { specimen.reload.label }.to('bar')
+      }.to change { sample.reload.label }.to('bar')
     end
   end
 
   describe 'destroying' do
-    let!(:specimen) { create(:specimen) }
+    let!(:sample) { create(:sample) }
 
     let(:instance) do
-      SampleResource.find(id: specimen.id)
+      SampleResource.find(id: sample.id)
     end
 
     it 'works' do
       expect {
         expect(instance.destroy).to eq(true)
-      }.to change { Specimen.count }.by(-1)
+      }.to change { Sample.count }.by(-1)
     end
   end
 end

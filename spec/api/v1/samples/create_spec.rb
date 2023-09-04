@@ -6,9 +6,9 @@ RSpec.describe "samples#create", type: :request do
   end
 
   describe 'basic create' do
-    let(:specimen_collection) { create(:specimen_collection) }
+    let(:sample_collection) { create(:sample_collection) }
     let(:params) do
-      attributes_for(:specimen)
+      attributes_for(:sample)
     end
     let(:payload) do
       {
@@ -16,10 +16,10 @@ RSpec.describe "samples#create", type: :request do
           type: 'samples',
           attributes: params,
           relationships: {
-            specimen_collection: {
+            sample_collection: {
               data: {
-                type: 'specimen_collections',
-                id: specimen_collection.id.to_s
+                type: 'sample_collections',
+                id: sample_collection.id.to_s
               }
             }
           }
@@ -32,7 +32,7 @@ RSpec.describe "samples#create", type: :request do
       expect {
         make_request
         expect(response.status).to eq(201), response.body
-      }.to change { Specimen.count }.by(1)
+      }.to change { Sample.count }.by(1)
     end
   end
 end

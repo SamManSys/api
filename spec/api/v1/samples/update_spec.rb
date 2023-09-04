@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "samples#update", type: :request do
   subject(:make_request) do
-    jsonapi_put "/api/v1/samples/#{specimen.id}", payload
+    jsonapi_put "/api/v1/samples/#{sample.id}", payload
   end
 
   describe 'basic update' do
-    let!(:specimen) { create(:specimen) }
+    let!(:sample) { create(:sample) }
 
     let(:payload) do
       {
         data: {
-          id: specimen.id.to_s,
+          id: sample.id.to_s,
           type: 'samples',
           attributes: {
             label: 'bar'
@@ -26,7 +26,7 @@ RSpec.describe "samples#update", type: :request do
       expect {
         make_request
         expect(response.status).to eq(200), response.body
-      }.to change { specimen.reload.label }.to eq('bar')
+      }.to change { sample.reload.label }.to eq('bar')
     end
   end
 end

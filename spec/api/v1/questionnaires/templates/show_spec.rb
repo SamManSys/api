@@ -5,18 +5,18 @@ RSpec.describe "questionnaires", type: :request do
     let(:params) { {} }
 
     subject(:make_request) do
-      jsonapi_get "/api/v1/questionnaires/templates/#{consent_questionnaire_template.id}", params: params
+      jsonapi_get "/api/v1/questionnaires_templates/#{questionnaires_template.id}", params: params
     end
 
     describe 'basic fetch' do
-      let!(:consent_questionnaire_template) { create(:consent_questionnaire_template) }
+      let!(:questionnaires_template) { create(:questionnaires_template) }
 
       it 'works' do
-        expect(Questionnaires::TemplateResource).to receive(:find).and_call_original
+        expect(QuestionnairesTemplateResource).to receive(:find).and_call_original
         make_request
         expect(response.status).to eq(200)
-        expect(d.jsonapi_type).to eq('templates')
-        expect(d.id).to eq(consent_questionnaire_template.id)
+        expect(d.jsonapi_type).to eq('questionnaires_templates')
+        expect(d.id).to eq(questionnaires_template.id)
       end
     end
   end

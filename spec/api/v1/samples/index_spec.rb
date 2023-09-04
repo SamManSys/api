@@ -8,15 +8,15 @@ RSpec.describe "samples#index", type: :request do
   end
 
   describe 'basic fetch' do
-    let!(:specimen1) { create(:specimen) }
-    let!(:specimen2) { create(:specimen) }
+    let!(:sample1) { create(:sample) }
+    let!(:sample2) { create(:sample) }
 
     it 'works' do
       expect(SampleResource).to receive(:all).and_call_original
       make_request
       expect(response.status).to eq(200), response.body
       expect(d.map(&:jsonapi_type).uniq).to match_array(['samples'])
-      expect(d.map(&:id)).to match_array([specimen1.id, specimen2.id])
+      expect(d.map(&:id)).to match_array([sample1.id, sample2.id])
     end
   end
 end

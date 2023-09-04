@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     resources :registration_to_cps
     resources :collection_protocols
     resources :samples
-    resources :shipment_specimens, only: [:create, :destroy]
+    resources :shipment_samples, only: [:create, :destroy]
     resources :shipments
-    resources :specimen_collections
+    resources :sample_collections
   
     resources :questionnaires_templates
     resources :questionnaires_questions

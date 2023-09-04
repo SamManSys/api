@@ -2,36 +2,36 @@ require 'rails_helper'
 
 RSpec.describe SampleResource, type: :resource do
   describe 'serialization' do
-    let!(:specimen) { create(:specimen) }
+    let!(:sample) { create(:sample) }
 
     it 'works' do
       render
       data = jsonapi_data[0]
-      expect(data.id).to eq(specimen.id)
+      expect(data.id).to eq(sample.id)
       expect(data.jsonapi_type).to eq('samples')
     end
   end
 
   describe 'filtering' do
-    let!(:specimen1) { create(:specimen) }
-    let!(:specimen2) { create(:specimen) }
+    let!(:sample1) { create(:sample) }
+    let!(:sample2) { create(:sample) }
 
     context 'by id' do
       before do
-        params[:filter] = { id: { eq: specimen2.id } }
+        params[:filter] = { id: { eq: sample2.id } }
       end
 
       it 'works' do
         render
-        expect(d.map(&:id)).to eq([specimen2.id])
+        expect(d.map(&:id)).to eq([sample2.id])
       end
     end
   end
 
   describe 'sorting' do
     describe 'by id' do
-      let!(:specimen1) { create(:specimen) }
-      let!(:specimen2) { create(:specimen) }
+      let!(:sample1) { create(:sample) }
+      let!(:sample2) { create(:sample) }
 
       context 'when ascending' do
         before do
@@ -41,8 +41,8 @@ RSpec.describe SampleResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            specimen1.id,
-            specimen2.id
+            sample1.id,
+            sample2.id
           ])
         end
       end
@@ -55,8 +55,8 @@ RSpec.describe SampleResource, type: :resource do
         it 'works' do
           render
           expect(d.map(&:id)).to eq([
-            specimen2.id,
-            specimen1.id
+            sample2.id,
+            sample1.id
           ])
         end
       end

@@ -1,18 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "questionnaires", type: :request do
-  describe "consent_questionnaire_responses#update", type: :request do
+  describe "questionnaires_responses#update", type: :request do
     subject(:make_request) do
-      jsonapi_put "/api/v1/questionnaires/responses/#{consent_questionnaire_response.id}", payload
+      jsonapi_put "/api/v1/questionnaires/responses/#{questionnaires_response.id}", payload
     end
 
     describe 'basic update' do
-      let!(:consent_questionnaire_response) { create(:consent_questionnaire_response) }
+      let!(:questionnaires_response) { create(:questionnaires_response) }
 
       let(:payload) do
         {
           data: {
-            id: consent_questionnaire_response.id.to_s,
+            id: questionnaires_response.id.to_s,
             type: 'responses',
             attributes: {
               answer: 'new answer'
@@ -27,7 +27,7 @@ RSpec.describe "questionnaires", type: :request do
         expect {
           make_request
           expect(response.status).to eq(200), response.body
-        }.to change { consent_questionnaire_response.reload.attributes }
+        }.to change { questionnaires_response.reload.attributes }
       end
     end
   end

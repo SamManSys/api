@@ -1,24 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe "questionnaires", type: :request do
-  describe "forms#destroy", type: :request do
-    subject(:make_request) do
-      jsonapi_delete "/api/v1/questionnaires/forms/#{completed_consent_questionnaire.id}"
-    end
+describe "questionnaires_forms#destroy", type: :request do
+  subject(:make_request) do
+    jsonapi_delete "/api/v1/questionnaires_forms/#{questionnaires_form.id}"
+  end
 
-    describe 'basic destroy' do
-      let!(:completed_consent_questionnaire) { create(:completed_consent_questionnaire) }
+  describe 'basic destroy' do
+    let!(:questionnaires_form) { create(:questionnaires_form) }
 
-      it 'updates the resource' do
-        expect(Questionnaires::FormResource).to receive(:find).and_call_original
-        expect {
-          make_request
-          expect(response.status).to eq(200), response.body
-        }.to change { CompletedConsentQuestionnaire.count }.by(-1)
-        expect { completed_consent_questionnaire.reload }
-          .to raise_error(ActiveRecord::RecordNotFound)
-        expect(json).to eq('meta' => {})
-      end
+    it 'updates the resource' do
+      expect(QuestionnairesFormResource).to receive(:find).and_call_original
+      expect {
+        make_request
+        expect(response.status).to eq(200), response.body
+      }.to change { QuestionnairesForm.count }.by(-1)
+      expect { questionnaires_form.reload }
+        .to raise_error(ActiveRecord::RecordNotFound)
+      expect(json).to eq('meta' => {})
     end
   end
 end
+

@@ -846,554 +846,9 @@
       }
     },
     {
-      "name": "SampleResource",
-      "type": "samples",
-      "graphql_entrypoint": "samples",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "label": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "barcode": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_class": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_type": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "comments": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "born_on": {
-          "type": "date",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "site": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "side": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "availability": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "available_quantity": {
-          "type": "float",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "label": {
-        },
-        "barcode": {
-        },
-        "specimen_class": {
-        },
-        "specimen_type": {
-        },
-        "born_on": {
-        },
-        "status": {
-        },
-        "site": {
-        },
-        "side": {
-        },
-        "availability": {
-        },
-        "available_quantity": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "label": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "barcode": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "specimen_class": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "specimen_type": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "comments": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "born_on": {
-          "type": "date",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "site": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "side": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "availability": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "available_quantity": {
-          "type": "float",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "specimen_collection_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "specimen_collection": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "SpecimenCollectionResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "ShipmentResource",
-      "type": "shipments",
-      "graphql_entrypoint": "shipments",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "date": {
-          "type": "datetime",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "to": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "lab_id": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "tr_sr_id": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "date": {
-        },
-        "to": {
-        },
-        "status": {
-        },
-        "lab_id": {
-        },
-        "tr_sr_id": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "date": {
-          "type": "datetime",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "to": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "lab_id": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "tr_sr_id": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        }
-      },
-      "relationships": {
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "ShipmentSpecimenResource",
-      "type": "shipment_specimens",
-      "graphql_entrypoint": "shipmentSpecimens",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "specimen_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "shipment_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "sample": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "SampleResource"
-        },
-        "shipment": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "ShipmentResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "SpecimenCollectionResource",
-      "type": "specimen_collections",
-      "graphql_entrypoint": "specimenCollections",
+      "name": "SampleCollectionResource",
+      "type": "sample_collections",
+      "graphql_entrypoint": "sampleCollections",
       "description": null,
       "attributes": {
         "id": {
@@ -1630,6 +1085,551 @@
           "type": "has_many",
           "description": null,
           "resource": "SampleResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "SampleResource",
+      "type": "samples",
+      "graphql_entrypoint": "samples",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "barcode": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "sample_class": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "sample_type": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "comments": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "born_on": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "site": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "side": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "availability": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "available_quantity": {
+          "type": "float",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "label": {
+        },
+        "barcode": {
+        },
+        "sample_class": {
+        },
+        "sample_type": {
+        },
+        "born_on": {
+        },
+        "status": {
+        },
+        "site": {
+        },
+        "side": {
+        },
+        "availability": {
+        },
+        "available_quantity": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "barcode": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "sample_class": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "sample_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "comments": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "born_on": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "site": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "side": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "available_quantity": {
+          "type": "float",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "sample_collection_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "sample_collection": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SampleCollectionResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "ShipmentResource",
+      "type": "shipments",
+      "graphql_entrypoint": "shipments",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "to": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "lab_id": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "tr_sr_id": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        },
+        "date": {
+        },
+        "to": {
+        },
+        "status": {
+        },
+        "lab_id": {
+        },
+        "tr_sr_id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "to": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "lab_id": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "tr_sr_id": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "ShipmentSampleResource",
+      "type": "shipment_samples",
+      "graphql_entrypoint": "shipmentSamples",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "sampleid": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "shipment_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "sample": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SampleResource"
+        },
+        "shipment": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "ShipmentResource"
         }
       },
       "stats": {
@@ -2065,6 +2065,82 @@
         }
       }
     },
+    "/api/v1/questionnaires_forms": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "show": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "create": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "update": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesFormResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_questions": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "show": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "create": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "update": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesQuestionResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_responses": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "show": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "create": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "update": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesResponseResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_templates": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "show": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "create": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "update": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesTemplateResource"
+        }
+      }
+    },
     "/api/v1/registration_to_cps": {
       "actions": {
         "index": {
@@ -2081,6 +2157,25 @@
         },
         "destroy": {
           "resource": "RegistrationToCpResource"
+        }
+      }
+    },
+    "/api/v1/sample_collections": {
+      "actions": {
+        "index": {
+          "resource": "SampleCollectionResource"
+        },
+        "show": {
+          "resource": "SampleCollectionResource"
+        },
+        "create": {
+          "resource": "SampleCollectionResource"
+        },
+        "update": {
+          "resource": "SampleCollectionResource"
+        },
+        "destroy": {
+          "resource": "SampleCollectionResource"
         }
       }
     },
@@ -2122,32 +2217,64 @@
         }
       }
     },
-    "/api/v1/shipment_specimens": {
+    "/api/v1/shipment_samples": {
       "actions": {
         "create": {
-          "resource": "ShipmentSpecimenResource"
+          "resource": "ShipmentSampleResource"
         },
         "destroy": {
-          "resource": "ShipmentSpecimenResource"
+          "resource": "ShipmentSampleResource"
         }
       }
     },
-    "/api/v1/specimen_collections": {
+    "/api/v1/stores_containers": {
       "actions": {
         "index": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "show": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "create": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "update": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "destroy": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
+        }
+      }
+    },
+    "/api/v1/stores_positions": {
+      "actions": {
+        "index": {
+          "resource": "StoresPositionResource"
+        },
+        "show": {
+          "resource": "StoresPositionResource"
+        },
+        "update": {
+          "resource": "StoresPositionResource"
+        }
+      }
+    },
+    "/api/v1/stores_templates": {
+      "actions": {
+        "index": {
+          "resource": "StoresTemplateResource"
+        },
+        "show": {
+          "resource": "StoresTemplateResource"
+        },
+        "create": {
+          "resource": "StoresTemplateResource"
+        },
+        "update": {
+          "resource": "StoresTemplateResource"
+        },
+        "destroy": {
+          "resource": "StoresTemplateResource"
         }
       }
     }

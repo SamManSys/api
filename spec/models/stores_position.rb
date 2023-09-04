@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe StorageContainerPosition, :type => :model do
+RSpec.describe StoresPosition, :type => :model do
   describe "Validates presence of" do
     let(:storage_container_position) { build(:storage_container_position) }
 

@@ -8,21 +8,21 @@ RSpec.describe "containers", type: :request do
 
     describe 'basic create' do
       let(:params) do
-        attributes_for(:storage_container_position)
+        attributes_for(:stores_position)
       end
       let(:storage_container) {
-        create(:storage_container)
+        create(:stores_container)
       }
 
       let(:payload) do
         {
           data: {
-            type: 'positions',
+            type: 'stores_position',
             attributes: params,
             relationships: {
-              store: {
+              stores_container: {
                 data: {
-                  type: 'stores',
+                  type: 'stores_container',
                   id: storage_container.id.to_s
                 }
               }

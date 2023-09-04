@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe "questionnaires", type: :request do
   describe "templates#update", type: :request do
     subject(:make_request) do
-      jsonapi_put "/api/v1/questionnaires/templates/#{consent_questionnaire_template.id}", payload
+      jsonapi_put "/api/v1/questionnaires_templates/#{questionnaires_template.id}", payload
     end
 
     describe 'basic update' do
-      let!(:consent_questionnaire_template) { create(:consent_questionnaire_template) }
+      let!(:questionnaires_template) { create(:questionnaires_template) }
 
       let(:payload) do
         {
           data: {
-            id: consent_questionnaire_template.id.to_s,
-            type: 'templates',
+            id: questionnaires_template.id.to_s,
+            type: 'questionnaires_templates',
             attributes: {
               name: 'Meh'
             }
@@ -23,11 +23,11 @@ RSpec.describe "questionnaires", type: :request do
 
       # Replace 'xit' with 'it' after adding attributes
       it 'updates the resource' do
-        expect(Questionnaires::TemplateResource).to receive(:find).and_call_original
+        expect(QuestionnairesTemplateResource).to receive(:find).and_call_original
         expect {
           make_request
           expect(response.status).to eq(200), response.body
-        }.to change { consent_questionnaire_template.reload.attributes }
+        }.to change { questionnaires_template.reload.attributes }
       end
     end
   end
