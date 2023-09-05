@@ -45,6 +45,7 @@ gem 'kaminari', '~> 1.1'
 gem 'responders', '~> 3.0'
 
 gem 'rack-cors'
+gem 'jwt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0beta2'
