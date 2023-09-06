@@ -8,6 +8,8 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'graphiti_spec_helpers/rspec'
+require './spec/helpers/json_token_helper'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -39,6 +41,7 @@ RSpec.configure do |config|
   config.include GraphitiSpecHelpers::Sugar
   config.include Graphiti::Rails::TestHelpers
   config.include RSpec::Benchmark::Matchers
+  config.include JsonTokenHelper
 
   config.filter_run_excluding perf: true
   
