@@ -40,6 +40,37 @@ module JsonTokenHelper
     JWT.encode payload, Rails.application.credentials.oauth2[:secret], 'HS512'    
   end
 
+  def invalid_signature
+    start = DateTime.now
+    dates = {
+      "exp": start.next_day.strftime('%s').to_i,
+      "iat": start.strftime('%s').to_i,
+    }
+    payload = JsonTokenHelper::TOKEN_TEMPLATE.merge(dates)
+    JWT.encode payload, 'BadSecret', 'HS512'
+  end
+
+  def invalid_signature_alg
+    start = DateTime.now
+    dates = {
+      "exp": start.next_day.strftime('%s').to_i,
+      "iat": start.strftime('%s').to_i,
+    }
+    payload = JsonTokenHelper::TOKEN_TEMPLATE.merge(dates)
+    JWT.encode payload, Rails.application.credentials.oauth2[:secret], 'HS256'
+  end
+
+  def invalid_iss
+    start = DateTime.now
+    dates = {
+      "exp": start.next_day.strftime('%s').to_i,
+      "iat": start.strftime('%s').to_i,
+      "iss": "https://www.example.com"
+    }
+    payload = JsonTokenHelper::TOKEN_TEMPLATE.merge(dates)
+    JWT.encode payload, Rails.application.credentials.oauth2[:secret], 'HS512'
+  end
+
   def jsonapi_headers
     media_type = 'application/vnd.api+json'
     {
