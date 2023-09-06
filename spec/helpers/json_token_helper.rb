@@ -1,6 +1,6 @@
 module JsonTokenHelper
-  def valid_token
-    payload = {
+  TOKEN_TEMPLATE = 
+  {
       "oauthClientId": "sammansys",
       "displayName": "Test User",
       "roles": [],
@@ -16,14 +16,28 @@ module JsonTokenHelper
         "cn=ohdsi,ou=groups,dc=ecmc,dc=ed,dc=ac,dc=uk",
         "cn=nhs_admins,ou=groups,dc=ecmc,dc=ed,dc=ac,dc=uk"
       ],
-      "exp": DateTime.now.next_day.strftime('%s').to_i,
-      "iat": DateTime.now.strftime('%s').to_i,
       "jti": "AT-8-qqFk3EPKJGr-3KQDy6DvD8oWV7-O7EvF",
       "aud": "https://oauth.pstmn.io/v1/callback",
       "scopes": []
     }
-
+  def valid_token
+    start = DateTime.now
+    dates = {
+      "exp": start.next_day.strftime('%s').to_i,
+      "iat": start.strftime('%s').to_i,
+    }
+    payload = JsonTokenHelper::TOKEN_TEMPLATE.merge(dates)
     JWT.encode payload, Rails.application.credentials.oauth2[:secret], 'HS512'
+  end
+
+  def expired_token
+    start = DateTime.now.prev_day
+    dates = {
+      "exp": start.next_day.strftime('%s').to_i,
+      "iat": start.strftime('%s').to_i,
+    }
+    payload = JsonTokenHelper::TOKEN_TEMPLATE.merge(dates)
+    JWT.encode payload, Rails.application.credentials.oauth2[:secret], 'HS512'    
   end
 
   def jsonapi_headers
