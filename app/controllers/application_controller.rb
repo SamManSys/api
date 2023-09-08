@@ -23,7 +23,7 @@ class ApplicationController < ActionController::API
   end
 
   def http_authorization
-    @http_authorization ||= request.headers['HTTP_AUTHORIZATION'] || ''
+    @http_authorization ||= request.headers['Authorization'] || ''
   end
 
   def security_errors(exception)
