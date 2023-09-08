@@ -1,6 +1,6 @@
 class SamplesController < ApplicationController
   def index
-    samples = SampleResource.all(params)
+    samples = SampleResource.all(params.merge({stats: { total: 'count' }}))
     respond_with(samples)
   end
 
