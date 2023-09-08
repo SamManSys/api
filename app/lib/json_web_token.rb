@@ -9,7 +9,7 @@ class JsonWebToken
   end
 
   def verify!
-      JWT.decode(@token, secret, true, algorithm: algorithm, iss: iss, verify_iss: true, aud: aud, verify_aud: true)
+      JWT.decode(@token, secret, true, algorithm: algorithm, iss: iss, verify_iss: true, aud: aud, verify_aud: false)
   end
 
   private
