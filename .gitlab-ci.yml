@@ -1,0 +1,31 @@
+image: ruby:3.1.4
+
+services:
+  - mysql:latest
+
+variables:
+  MYSQL_ROOT_PASSWORD: r00t_passw0rd
+  RAILS_DATABASE_HOST: mysql
+  RAILS_DATABASE_USER: root
+  RAILS_DATABASE_PASS: r00t_passw0rd
+
+cache:
+  policy: pull-push
+  unprotect: false
+  untracked: false
+  when: on_success
+  paths:
+    - vendor/ruby
+
+before_script:
+  - ruby -v
+  - bundle config set --local deployment true
+  - bundle install -j $(nproc)
+
+rspec:
+  variables:
+    RAILS_ENV: test
+  script:
+    - rails db:creae
+    - rails db:migrate
+    - rspec spec
