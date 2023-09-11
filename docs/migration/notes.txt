@@ -1,0 +1,20 @@
+SQL for renaming tables
+
+ALTER TABLE `sammansys_development`.`specimens` RENAME TO  `sammansys_development`.`samples`;
+ALTER TABLE `sammansys_development`.`storage_containers` RENAME TO  `sammansys_development`.`stores`;
+ALTER TABLE `sammansys_test`.`extra_specimen_identifiers` RENAME TO  `sammansys_test`.`extra_sample_identifiers` ;
+
+SQL for renaming fields
+
+ALTER TABLE `sammansys_test`.`extra_specimen_identifiers` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`hazards` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`hazard_types_specimens` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`shipment_specimens` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`specimen_histories` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`specimen_list_specimens` CHANGE COLUMN `specimen_id` `sample_id` BIGINT(20) NULL DEFAULT NULL ;
+
+ALTER TABLE `sammansys_test`.`shipment_containers` CHANGE COLUMN `storage_container_id` `store_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`storage_container_collection_protocols` CHANGE COLUMN `storage_container_id` `store_id` BIGINT(20) NULL DEFAULT NULL ;
+ALTER TABLE `sammansys_test`.`storage_container_positions` CHANGE COLUMN `storage_container_id` `store_id` BIGINT(20) NULL DEFAULT NULL ;
+
+

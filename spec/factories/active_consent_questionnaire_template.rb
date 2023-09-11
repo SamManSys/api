@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :active_consent_questionnaire_template do
+  factory :active_questionnaires_template do
     association :collection_protocol
-    association :consent_questionnaire_template
+    association :questionnaires_template
   end
 end

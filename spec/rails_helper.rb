@@ -1,11 +1,15 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'rspec-benchmark'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'graphiti_spec_helpers/rspec'
+require './spec/helpers/json_token_helper'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -36,7 +40,11 @@ RSpec.configure do |config|
   config.include GraphitiSpecHelpers::RSpec
   config.include GraphitiSpecHelpers::Sugar
   config.include Graphiti::Rails::TestHelpers
+  config.include RSpec::Benchmark::Matchers
+  config.include JsonTokenHelper
 
+  config.filter_run_excluding perf: true
+  
   config.before :each do
     handle_request_exceptions(false)
   end

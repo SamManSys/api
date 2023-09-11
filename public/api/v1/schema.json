@@ -1,56 +1,6 @@
 {
   "resources": [
     {
-      "name": "ActiveConsentQuestionnaireTemplateResource",
-      "type": "active_consent_questionnaire_templates",
-      "graphql_entrypoint": "activeConsentQuestionnaireTemplates",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "collection_protocol": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "CollectionProtocolResource"
-        },
-        "consent_questionnaire_template": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "ConsentQuestionnaireTemplateResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
       "name": "CollectionProtocolResource",
       "type": "collection_protocols",
       "graphql_entrypoint": "collectionProtocols",
@@ -155,444 +105,6 @@
           ]
         },
         "short_protocol_name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        }
-      },
-      "relationships": {
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "CompletedConsentQuestionnaireResource",
-      "type": "completed_consent_questionnaires",
-      "graphql_entrypoint": "completedConsentQuestionnaires",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "signed_date": {
-          "type": "datetime",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "witness_name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "scanned_uri": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "qc_performed": {
-          "type": "boolean",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "template_name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "signed_date": {
-        },
-        "witness_name": {
-        },
-        "scanned_uri": {
-        },
-        "qc_performed": {
-        },
-        "template_name": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "signed_date": {
-          "type": "datetime",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "witness_name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "scanned_uri": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "qc_performed": {
-          "type": "boolean",
-          "operators": [
-            "eq"
-          ],
-          "single": true
-        },
-        "template_name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "registration_to_cp_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "registration_to_cp": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "RegistrationToCpResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "ConsentQuestionnaireQuestionResource",
-      "type": "consent_questionnaire_questions",
-      "graphql_entrypoint": "consentQuestionnaireQuestions",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "question": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "position": {
-          "type": "integer",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "question": {
-        },
-        "position": {
-        },
-        "status": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "question": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "position": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "consent_questionnaire_template_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "consent_questionnaire_template": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "ConsentQuestionnaireTemplateResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "ConsentQuestionnaireResponseResource",
-      "type": "consent_questionnaire_responses",
-      "graphql_entrypoint": "consentQuestionnaireResponses",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "answer": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "answer": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "answer": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "completed_consent_questionnaire_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "consent_questionnaire_question_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "completed_consent_questionnaire": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "CompletedConsentQuestionnaireResource"
-        },
-        "consent_questionnaire_question": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "ConsentQuestionnaireQuestionResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "ConsentQuestionnaireTemplateResource",
-      "type": "consent_questionnaire_templates",
-      "graphql_entrypoint": "consentQuestionnaireTemplates",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "name": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "name": {
           "type": "string",
           "operators": [
             "eq",
@@ -832,6 +344,416 @@
       }
     },
     {
+      "name": "QuestionnairesFormResource",
+      "type": "questionnaires_forms",
+      "graphql_entrypoint": "questionnairesForms",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "signed_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "witness_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "scanned_uri": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "template_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "signed_date": {
+        },
+        "witness_name": {
+        },
+        "scanned_uri": {
+        },
+        "qc_performed": {
+        },
+        "template_name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "signed_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "witness_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "scanned_uri": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "qc_performed": {
+          "type": "boolean",
+          "operators": [
+            "eq"
+          ],
+          "single": true
+        },
+        "template_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "registration_to_cp_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "registration_to_cp": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "RegistrationToCpResource"
+        },
+        "questionnaires_responses": {
+          "type": "has_many",
+          "description": null,
+          "resource": "QuestionnairesResponseResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "QuestionnairesQuestionResource",
+      "type": "questionnaires_questions",
+      "graphql_entrypoint": "questionnairesQuestions",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "question": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "position": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "question": {
+        },
+        "position": {
+        },
+        "status": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "position": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "questionnaires_template": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "QuestionnairesTemplateResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "QuestionnairesResponseResource",
+      "type": "questionnaires_responses",
+      "graphql_entrypoint": "questionnairesResponses",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "answer": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "answer": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "answer": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "questionnaires_question": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "questionnaires_form": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "QuestionnairesFormResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "QuestionnairesTemplateResource",
+      "type": "questionnaires_templates",
+      "graphql_entrypoint": "questionnairesTemplates",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "RegistrationToCpResource",
       "type": "registration_to_cps",
       "graphql_entrypoint": "registrationToCps",
@@ -915,6 +837,553 @@
           "type": "belongs_to",
           "description": null,
           "resource": "PatientResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "SampleCollectionResource",
+      "type": "sample_collections",
+      "graphql_entrypoint": "sampleCollections",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "study_point_name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "collection_date": {
+          "type": "datetime",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "diagnosis": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "pathology_number": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "clinical_status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "comments": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "collection_status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "not_collected_reason": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "study_point_name": {
+        },
+        "collection_date": {
+        },
+        "status": {
+        },
+        "diagnosis": {
+        },
+        "pathology_number": {
+        },
+        "clinical_status": {
+        },
+        "comments": {
+        },
+        "collection_status": {
+        },
+        "not_collected_reason": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "study_point_name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "collection_date": {
+          "type": "datetime",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "diagnosis": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "pathology_number": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "clinical_status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "comments": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "collection_status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "not_collected_reason": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "samples": {
+          "type": "has_many",
+          "description": null,
+          "resource": "SampleResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
+      "name": "SampleResource",
+      "type": "samples",
+      "graphql_entrypoint": "samples",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "label": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "barcode": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "sample_class": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "sample_type": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "comments": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "born_on": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "status": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "site": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "side": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "availability": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "available_quantity": {
+          "type": "float",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "label": {
+        },
+        "barcode": {
+        },
+        "sample_class": {
+        },
+        "sample_type": {
+        },
+        "born_on": {
+        },
+        "status": {
+        },
+        "site": {
+        },
+        "side": {
+        },
+        "availability": {
+        },
+        "available_quantity": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "barcode": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "sample_class": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "sample_type": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "comments": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "born_on": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "site": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "side": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "availability": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "available_quantity": {
+          "type": "float",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "sample_collection_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+        "sample_collection": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "SampleCollectionResource"
         }
       },
       "stats": {
@@ -1098,9 +1567,9 @@
       }
     },
     {
-      "name": "ShipmentSpecimenResource",
-      "type": "shipment_specimens",
-      "graphql_entrypoint": "shipmentSpecimens",
+      "name": "ShipmentSampleResource",
+      "type": "shipment_samples",
+      "graphql_entrypoint": "shipmentSamples",
       "description": null,
       "attributes": {
         "id": {
@@ -1128,7 +1597,7 @@
             "lte"
           ]
         },
-        "specimen_id": {
+        "sampleid": {
           "type": "integer",
           "operators": [
             "eq",
@@ -1152,10 +1621,10 @@
         }
       },
       "relationships": {
-        "specimen": {
+        "sample": {
           "type": "belongs_to",
           "description": null,
-          "resource": "SpecimenResource"
+          "resource": "SampleResource"
         },
         "shipment": {
           "type": "belongs_to",
@@ -1170,9 +1639,9 @@
       }
     },
     {
-      "name": "SpecimenCollectionResource",
-      "type": "specimen_collections",
-      "graphql_entrypoint": "specimenCollections",
+      "name": "StoresContainerResource",
+      "type": "stores_containers",
+      "graphql_entrypoint": "storesContainers",
       "description": null,
       "attributes": {
         "id": {
@@ -1181,55 +1650,25 @@
           "writable": true,
           "description": null
         },
-        "study_point_name": {
+        "name": {
           "type": "string",
           "readable": true,
           "writable": true,
           "description": null
         },
-        "collection_date": {
-          "type": "datetime",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
+        "size_x": {
           "type": "string",
           "readable": true,
           "writable": true,
           "description": null
         },
-        "diagnosis": {
+        "size_y": {
           "type": "string",
           "readable": true,
           "writable": true,
           "description": null
         },
-        "pathology_number": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "clinical_status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "comments": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "collection_status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "not_collected_reason": {
+        "barcode": {
           "type": "string",
           "readable": true,
           "writable": true,
@@ -1241,23 +1680,13 @@
       "sorts": {
         "id": {
         },
-        "study_point_name": {
+        "name": {
         },
-        "collection_date": {
+        "size_x": {
         },
-        "status": {
+        "size_y": {
         },
-        "diagnosis": {
-        },
-        "pathology_number": {
-        },
-        "clinical_status": {
-        },
-        "comments": {
-        },
-        "collection_status": {
-        },
-        "not_collected_reason": {
+        "barcode": {
         }
       },
       "filters": {
@@ -1272,7 +1701,7 @@
             "lte"
           ]
         },
-        "study_point_name": {
+        "name": {
           "type": "string",
           "operators": [
             "eq",
@@ -1287,18 +1716,7 @@
             "not_match"
           ]
         },
-        "collection_date": {
-          "type": "datetime",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "status": {
+        "size_x": {
           "type": "string",
           "operators": [
             "eq",
@@ -1313,7 +1731,7 @@
             "not_match"
           ]
         },
-        "diagnosis": {
+        "size_y": {
           "type": "string",
           "operators": [
             "eq",
@@ -1328,67 +1746,7 @@
             "not_match"
           ]
         },
-        "pathology_number": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "clinical_status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "comments": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "collection_status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "not_collected_reason": {
+        "barcode": {
           "type": "string",
           "operators": [
             "eq",
@@ -1405,290 +1763,10 @@
         }
       },
       "relationships": {
-        "specimens": {
-          "type": "has_many",
-          "description": null,
-          "resource": "SpecimenResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "SpecimenResource",
-      "type": "specimens",
-      "graphql_entrypoint": "specimens",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "label": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "barcode": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_class": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "specimen_type": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "comments": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "born_on": {
-          "type": "date",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "status": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "site": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "side": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "availability": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "label": {
-        },
-        "barcode": {
-        },
-        "specimen_class": {
-        },
-        "specimen_type": {
-        },
-        "born_on": {
-        },
-        "status": {
-        },
-        "site": {
-        },
-        "side": {
-        },
-        "availability": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "label": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "barcode": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "specimen_class": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "specimen_type": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "comments": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "born_on": {
-          "type": "date",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "status": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "site": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "side": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "availability": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "specimen_collection_id": {
-          "type": "integer",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        }
-      },
-      "relationships": {
-        "specimen_collection": {
+        "stores_template": {
           "type": "belongs_to",
           "description": null,
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresTemplateResource"
         }
       },
       "stats": {
@@ -1698,9 +1776,9 @@
       }
     },
     {
-      "name": "StorageContainerPositionResource",
-      "type": "storage_container_positions",
-      "graphql_entrypoint": "storageContainerPositions",
+      "name": "StoresPositionResource",
+      "type": "stores_positions",
+      "graphql_entrypoint": "storesPositions",
       "description": null,
       "attributes": {
         "id": {
@@ -1709,16 +1787,34 @@
           "writable": true,
           "description": null
         },
+        "content_id": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_type": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
+        "content_name": {
+          "type": "string",
+          "readable": true,
+          "writable": false,
+          "description": null
+        },
         "position_x": {
           "type": "string",
           "readable": true,
-          "writable": true,
+          "writable": false,
           "description": null
         },
         "position_y": {
           "type": "string",
           "readable": true,
-          "writable": true,
+          "writable": false,
           "description": null
         }
       },
@@ -1726,10 +1822,6 @@
       },
       "sorts": {
         "id": {
-        },
-        "position_x": {
-        },
-        "position_y": {
         }
       },
       "filters": {
@@ -1742,36 +1834,6 @@
             "gte",
             "lt",
             "lte"
-          ]
-        },
-        "position_x": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "position_y": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
           ]
         }
       },
@@ -1780,15 +1842,15 @@
           "type": "polymorphic_belongs_to",
           "description": null,
           "resources": [
-            "StorageContainerResource",
-            "SpecimenResource"
+            "StoresContainerResource",
+            "SampleResource"
           ],
-          "parent_resource": "StorageContainerPositionResource"
+          "parent_resource": "StoresPositionResource"
         },
-        "storage_container": {
+        "stores_container": {
           "type": "belongs_to",
           "description": null,
-          "resource": "StorageContainerResource"
+          "resource": "StoresContainerResource"
         }
       },
       "stats": {
@@ -1798,146 +1860,9 @@
       }
     },
     {
-      "name": "StorageContainerResource",
-      "type": "storage_containers",
-      "graphql_entrypoint": "storageContainers",
-      "description": null,
-      "attributes": {
-        "id": {
-          "type": "integer_id",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "name": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_x": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "size_y": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        },
-        "barcode": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
-        }
-      },
-      "extra_attributes": {
-      },
-      "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "size_x": {
-        },
-        "size_y": {
-        },
-        "barcode": {
-        }
-      },
-      "filters": {
-        "id": {
-          "type": "integer_id",
-          "operators": [
-            "eq",
-            "not_eq",
-            "gt",
-            "gte",
-            "lt",
-            "lte"
-          ]
-        },
-        "name": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "size_x": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "size_y": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        },
-        "barcode": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
-        }
-      },
-      "relationships": {
-        "storage_container_template": {
-          "type": "belongs_to",
-          "description": null,
-          "resource": "StorageContainerTemplateResource"
-        }
-      },
-      "stats": {
-        "total": [
-          "count"
-        ]
-      }
-    },
-    {
-      "name": "StorageContainerTemplateResource",
-      "type": "storage_container_templates",
-      "graphql_entrypoint": "storageContainerTemplates",
+      "name": "StoresTemplateResource",
+      "type": "stores_templates",
+      "graphql_entrypoint": "storesTemplates",
       "description": null,
       "attributes": {
         "id": {
@@ -2083,25 +2008,6 @@
     }
   ],
   "endpoints": {
-    "/api/v1/active_consent_questionnaire_templates": {
-      "actions": {
-        "index": {
-          "resource": "ActiveConsentQuestionnaireTemplateResource"
-        },
-        "show": {
-          "resource": "ActiveConsentQuestionnaireTemplateResource"
-        },
-        "create": {
-          "resource": "ActiveConsentQuestionnaireTemplateResource"
-        },
-        "update": {
-          "resource": "ActiveConsentQuestionnaireTemplateResource"
-        },
-        "destroy": {
-          "resource": "ActiveConsentQuestionnaireTemplateResource"
-        }
-      }
-    },
     "/api/v1/collection_protocols": {
       "actions": {
         "index": {
@@ -2118,82 +2024,6 @@
         },
         "destroy": {
           "resource": "CollectionProtocolResource"
-        }
-      }
-    },
-    "/api/v1/completed_consent_questionnaires": {
-      "actions": {
-        "index": {
-          "resource": "CompletedConsentQuestionnaireResource"
-        },
-        "show": {
-          "resource": "CompletedConsentQuestionnaireResource"
-        },
-        "create": {
-          "resource": "CompletedConsentQuestionnaireResource"
-        },
-        "update": {
-          "resource": "CompletedConsentQuestionnaireResource"
-        },
-        "destroy": {
-          "resource": "CompletedConsentQuestionnaireResource"
-        }
-      }
-    },
-    "/api/v1/consent_questionnaire_questions": {
-      "actions": {
-        "index": {
-          "resource": "ConsentQuestionnaireQuestionResource"
-        },
-        "show": {
-          "resource": "ConsentQuestionnaireQuestionResource"
-        },
-        "create": {
-          "resource": "ConsentQuestionnaireQuestionResource"
-        },
-        "update": {
-          "resource": "ConsentQuestionnaireQuestionResource"
-        },
-        "destroy": {
-          "resource": "ConsentQuestionnaireQuestionResource"
-        }
-      }
-    },
-    "/api/v1/consent_questionnaire_responses": {
-      "actions": {
-        "index": {
-          "resource": "ConsentQuestionnaireResponseResource"
-        },
-        "show": {
-          "resource": "ConsentQuestionnaireResponseResource"
-        },
-        "create": {
-          "resource": "ConsentQuestionnaireResponseResource"
-        },
-        "update": {
-          "resource": "ConsentQuestionnaireResponseResource"
-        },
-        "destroy": {
-          "resource": "ConsentQuestionnaireResponseResource"
-        }
-      }
-    },
-    "/api/v1/consent_questionnaire_templates": {
-      "actions": {
-        "index": {
-          "resource": "ConsentQuestionnaireTemplateResource"
-        },
-        "show": {
-          "resource": "ConsentQuestionnaireTemplateResource"
-        },
-        "create": {
-          "resource": "ConsentQuestionnaireTemplateResource"
-        },
-        "update": {
-          "resource": "ConsentQuestionnaireTemplateResource"
-        },
-        "destroy": {
-          "resource": "ConsentQuestionnaireTemplateResource"
         }
       }
     },
@@ -2235,6 +2065,82 @@
         }
       }
     },
+    "/api/v1/questionnaires_forms": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "show": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "create": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "update": {
+          "resource": "QuestionnairesFormResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesFormResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_questions": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "show": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "create": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "update": {
+          "resource": "QuestionnairesQuestionResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesQuestionResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_responses": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "show": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "create": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "update": {
+          "resource": "QuestionnairesResponseResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesResponseResource"
+        }
+      }
+    },
+    "/api/v1/questionnaires_templates": {
+      "actions": {
+        "index": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "show": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "create": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "update": {
+          "resource": "QuestionnairesTemplateResource"
+        },
+        "destroy": {
+          "resource": "QuestionnairesTemplateResource"
+        }
+      }
+    },
     "/api/v1/registration_to_cps": {
       "actions": {
         "index": {
@@ -2251,6 +2157,44 @@
         },
         "destroy": {
           "resource": "RegistrationToCpResource"
+        }
+      }
+    },
+    "/api/v1/sample_collections": {
+      "actions": {
+        "index": {
+          "resource": "SampleCollectionResource"
+        },
+        "show": {
+          "resource": "SampleCollectionResource"
+        },
+        "create": {
+          "resource": "SampleCollectionResource"
+        },
+        "update": {
+          "resource": "SampleCollectionResource"
+        },
+        "destroy": {
+          "resource": "SampleCollectionResource"
+        }
+      }
+    },
+    "/api/v1/samples": {
+      "actions": {
+        "index": {
+          "resource": "SampleResource"
+        },
+        "show": {
+          "resource": "SampleResource"
+        },
+        "create": {
+          "resource": "SampleResource"
+        },
+        "update": {
+          "resource": "SampleResource"
+        },
+        "destroy": {
+          "resource": "SampleResource"
         }
       }
     },
@@ -2273,108 +2217,64 @@
         }
       }
     },
-    "/api/v1/shipment_specimens": {
+    "/api/v1/shipment_samples": {
       "actions": {
         "create": {
-          "resource": "ShipmentSpecimenResource"
+          "resource": "ShipmentSampleResource"
         },
         "destroy": {
-          "resource": "ShipmentSpecimenResource"
+          "resource": "ShipmentSampleResource"
         }
       }
     },
-    "/api/v1/specimen_collections": {
+    "/api/v1/stores_containers": {
       "actions": {
         "index": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "show": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "create": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "update": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         },
         "destroy": {
-          "resource": "SpecimenCollectionResource"
+          "resource": "StoresContainerResource"
         }
       }
     },
-    "/api/v1/specimens": {
+    "/api/v1/stores_positions": {
       "actions": {
         "index": {
-          "resource": "SpecimenResource"
+          "resource": "StoresPositionResource"
         },
         "show": {
-          "resource": "SpecimenResource"
-        },
-        "create": {
-          "resource": "SpecimenResource"
+          "resource": "StoresPositionResource"
         },
         "update": {
-          "resource": "SpecimenResource"
-        },
-        "destroy": {
-          "resource": "SpecimenResource"
+          "resource": "StoresPositionResource"
         }
       }
     },
-    "/api/v1/storage_container_positions": {
+    "/api/v1/stores_templates": {
       "actions": {
         "index": {
-          "resource": "StorageContainerPositionResource"
+          "resource": "StoresTemplateResource"
         },
         "show": {
-          "resource": "StorageContainerPositionResource"
+          "resource": "StoresTemplateResource"
         },
         "create": {
-          "resource": "StorageContainerPositionResource"
+          "resource": "StoresTemplateResource"
         },
         "update": {
-          "resource": "StorageContainerPositionResource"
+          "resource": "StoresTemplateResource"
         },
         "destroy": {
-          "resource": "StorageContainerPositionResource"
-        }
-      }
-    },
-    "/api/v1/storage_containers": {
-      "actions": {
-        "index": {
-          "resource": "StorageContainerResource"
-        },
-        "show": {
-          "resource": "StorageContainerResource"
-        },
-        "create": {
-          "resource": "StorageContainerResource"
-        },
-        "update": {
-          "resource": "StorageContainerResource"
-        },
-        "destroy": {
-          "resource": "StorageContainerResource"
-        }
-      }
-    },
-    "/api/v1/storage_container_templates": {
-      "actions": {
-        "index": {
-          "resource": "StorageContainerTemplateResource"
-        },
-        "show": {
-          "resource": "StorageContainerTemplateResource"
-        },
-        "create": {
-          "resource": "StorageContainerTemplateResource"
-        },
-        "update": {
-          "resource": "StorageContainerTemplateResource"
-        },
-        "destroy": {
-          "resource": "StorageContainerTemplateResource"
+          "resource": "StoresTemplateResource"
         }
       }
     }

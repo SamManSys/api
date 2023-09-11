@@ -1,35 +1,35 @@
 require 'rails_helper'
 
-RSpec.describe SpecimenCollectionResource, type: :resource do
+RSpec.describe SampleCollectionResource, type: :resource do
   describe 'creating' do
     let(:payload) do
       {
         data: {
-          type: 'specimen_collections',
-          attributes: attributes_for(:specimen_collection)
+          type: 'sample_collections',
+          attributes: attributes_for(:sample_collection)
         }
       }
     end
 
     let(:instance) do
-      SpecimenCollectionResource.build(payload)
+      SampleCollectionResource.build(payload)
     end
 
     it 'works' do
       expect {
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { SpecimenCollection.count }.by(1)
+      }.to change { SampleCollection.count }.by(1)
     end
   end
 
   describe 'updating' do
-    let!(:specimen_collection) { create(:specimen_collection) }
+    let!(:sample_collection) { create(:sample_collection) }
 
     let(:payload) do
       {
         data: {
-          id: specimen_collection.id.to_s,
-          type: 'specimen_collections',
+          id: sample_collection.id.to_s,
+          type: 'sample_collections',
           attributes: { 
             study_point_name: "Meh"
           } 
@@ -38,27 +38,27 @@ RSpec.describe SpecimenCollectionResource, type: :resource do
     end
 
     let(:instance) do
-      SpecimenCollectionResource.find(payload)
+      SampleCollectionResource.find(payload)
     end
 
     it 'works (add some attributes and enable this spec)' do
       expect {
         expect(instance.update_attributes).to eq(true)
-      }.to change { specimen_collection.reload.study_point_name }.to('Meh') 
+      }.to change { sample_collection.reload.study_point_name }.to('Meh') 
     end
   end
 
   describe 'destroying' do
-    let!(:specimen_collection) { create(:specimen_collection) }
+    let!(:sample_collection) { create(:sample_collection) }
 
     let(:instance) do
-      SpecimenCollectionResource.find(id: specimen_collection.id)
+      SampleCollectionResource.find(id: sample_collection.id)
     end
 
     it 'works' do
       expect {
         expect(instance.destroy).to eq(true)
-      }.to change { SpecimenCollection.count }.by(-1)
+      }.to change { SampleCollection.count }.by(-1)
     end
   end
 end
