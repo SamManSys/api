@@ -26,6 +26,6 @@ rspec:
   variables:
     RAILS_ENV: test
   script:
-    - rails db:creae
-    - rails db:migrate
-    - rspec spec
+    - bin/rails db:create
+    - bin/rails db:migrate
+    - bin/rspec spec
