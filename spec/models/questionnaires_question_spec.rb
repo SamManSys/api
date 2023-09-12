@@ -27,7 +27,8 @@ RSpec.describe QuestionnairesQuestion, :type => :model do
 
     it "is not possible to update" do
       questionnaires_question.question = "bar"
-      expect(questionnaires_question).to_not be_valid
+      questionnaires_question.save
+      expect(questionnaires_question.save).to be_falsey
       expect(questionnaires_question.errors).not_to be_empty
       expect(questionnaires_question.errors.where(:base).first.full_message).to eq("Questionnaires question is closed. It cannot be updated")      
     end

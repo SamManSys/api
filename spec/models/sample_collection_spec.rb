@@ -27,7 +27,7 @@ RSpec.describe SampleCollection, :type => :model do
 
     it "is not possible to update" do
       sample_collection.study_point_name = "bar"
-      expect(sample_collection).to_not be_valid
+      expect(sample_collection.save).to be_falsey
       expect(sample_collection.errors).not_to be_empty
       expect(sample_collection.errors.where(:base).first.full_message).to eq("Sample collection is closed. It cannot be updated")      
     end

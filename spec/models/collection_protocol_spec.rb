@@ -27,7 +27,7 @@ RSpec.describe CollectionProtocol, :type => :model do
 
     it "is not possible to update" do
       collection_protocol.start_date = Date.yesterday
-      expect(collection_protocol).to_not be_valid
+      expect(collection_protocol.save).to be_falsey
       expect(collection_protocol.errors).not_to be_empty
       expect(collection_protocol.errors.where(:base).first.full_message).to eq("Collection protocol is closed. It cannot be updated")      
     end
