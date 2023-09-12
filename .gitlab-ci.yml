@@ -21,6 +21,7 @@ before_script:
   - ruby -v
   - bundle config set --local deployment true
   - bundle install -j $(nproc)
+  - sleep 1m
 
 rspec:
   variables:
