@@ -15,7 +15,7 @@ cache:
   untracked: false
   when: on_success
   paths:
-    - vendor/ruby
+    - vendor/bundle/ruby
 
 before_script:
   - ruby -v
