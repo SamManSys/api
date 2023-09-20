@@ -38,14 +38,4 @@ class SamplesController < ApplicationController
       render jsonapi_errors: sample
     end
   end
-
-  def aliquot
-    aliquot_s = ServiceObjects::Sample::Aliquot.new params[:data][:id]
-    aliquot_s.perform(params[:data][:attributes][:number])
-    query_id = aliquot_s.new_samples.collect(&:id)
-    query_id.prepend(aliquot_s.original_sample.id)
-    
-    sample = SampleResource.all(filter: { id: query_id})
-    render jsonapi: sample
-  end
 end
