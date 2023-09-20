@@ -4,11 +4,7 @@ Rails.application.routes.draw do
     resources :patients
     resources :registration_to_cps
     resources :collection_protocols
-    resources :samples do
-      member do
-        put 'aliquot'
-      end
-    end
+    resources :samples 
     resources :shipment_samples, only: [:create, :destroy]
     resources :shipments
     resources :sample_collections
