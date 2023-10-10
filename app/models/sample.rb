@@ -1,4 +1,5 @@
 class Sample < ApplicationRecord
+  include CompatibilityView
   include ServiceModules::StatusableResource
   belongs_to :sample_collection
 
