@@ -13,12 +13,15 @@ RSpec.describe Sample, :type => :model do
   end
 
   describe "is disabled" do
-    before(:each) do
-      create(:sample, :tissue, :disabled)
-    end
+    let!(:sample) { create(:sample, :tissue, :disabled) }
 
     it "is not normally visible" do
       expect(Sample.all).to be_empty
+    end
+
+    it "returns an error when saved" do
+      sample.label = "bar"
+      expect(sample.save).to be_falsey
     end
   end
 
@@ -27,7 +30,7 @@ RSpec.describe Sample, :type => :model do
 
     it "is not possible to update" do
       sample.label = "bar"
-      expect(sample).to_not be_valid
+      expect(sample.save).to be_falsey
       expect(sample.errors).not_to be_empty
       expect(sample.errors.where(:base).first.full_message).to eq("Sample is closed. It cannot be updated")      
     end

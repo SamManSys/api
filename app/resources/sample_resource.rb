@@ -14,4 +14,4 @@ class SampleResource < ApplicationResource
   attribute :available_quantity, :float
   
   attribute :sample_collection_id, :integer, only: [:filterable]
-end
+  end

@@ -2195,6 +2195,9 @@
         },
         "destroy": {
           "resource": "SampleResource"
+        },
+        "aliquot": {
+          "resource": "SampleResource"
         }
       }
     },

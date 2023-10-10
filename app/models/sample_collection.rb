@@ -1,8 +1,7 @@
-class SampleCollection < ApplicationRecord  
+class SampleCollection < ApplicationRecord
+  include CompatibilityView
+  include ServiceModules::StatusableResource
   has_many :samples
 
-  default_scope { where.not(status: :disabled)}
-
-  validates_presence_of :study_point_name
-  validates_with ClosedValidator
+  validates_presence_of :study_point_name  
 end

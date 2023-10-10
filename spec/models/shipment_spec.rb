@@ -27,7 +27,7 @@ RSpec.describe Shipment, :type => :model do
 
     it "is not possible to update" do
       shipment.name = "bar"
-      expect(shipment).to_not be_valid
+      expect(shipment.save).to be_falsey
       expect(shipment.errors).not_to be_empty
       expect(shipment.errors.where(:base).first.full_message).to eq("Shipment is closed. It cannot be updated")      
     end

@@ -51,5 +51,4 @@ test:
 production:
   <<: *default
   database: sammansys_production
-  username: sammansys
-  password: <%= ENV['SAMMANSYS_DATABASE_PASSWORD'] %>
+

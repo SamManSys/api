@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :patients
     resources :registration_to_cps
     resources :collection_protocols
-    resources :samples
+    resources :samples 
     resources :shipment_samples, only: [:create, :destroy]
     resources :shipments
     resources :sample_collections

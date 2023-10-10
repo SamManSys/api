@@ -15,17 +15,18 @@ cache:
   untracked: false
   when: on_success
   paths:
-    - vendor/ruby
+    - vendor/bundle/ruby
 
 before_script:
   - ruby -v
   - bundle config set --local deployment true
   - bundle install -j $(nproc)
+  - sleep 1m
 
 rspec:
   variables:
     RAILS_ENV: test
   script:
-    - rails db:creae
-    - rails db:migrate
-    - rspec spec
+    - bin/rails db:create
+    - bin/rails db:schema:load
+    - bin/rspec spec

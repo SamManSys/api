@@ -19,4 +19,24 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins 'http://localhost:4200'
     resource '*', headers: :any, methods: [:get, :post]
   end
+
+  allow do
+    origins 'https://www.ecmc.ed.ac.uk'
+    resource '*', headers: :any, methods: [:get, :post]
+  end
+
+  allow do
+    origins 'https://test.ecmc.ed.ac.uk'
+    resource '*', headers: :any, methods: [:get, :post]
+  end
+
+  allow do
+    origins 'https://www.eci.ed.ac.uk'
+    resource '*', headers: :any, methods: [:get, :post]
+  end
+
+  allow do
+    origins 'https://test.eci.ed.ac.uk'
+    resource '*', headers: :any, methods: [:get, :post]
+  end
 end
